@@ -8,19 +8,47 @@
 
 import UIKit
 
-class chooseUniversityController: UIViewController {
+class chooseUniversityController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    @IBOutlet weak var switchState: UILabel!
+    @IBOutlet weak var nextButton: UIBarButtonItem!
+    @IBOutlet weak var chooseUniversity: UITextField!
+    var data = [
+            "Select a University",
+            "University of Waterloo",
+            "Laurier University",
+            "Foo University"
+    ]
     
-    var data: String?
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        if (data != nil) {
-            switchState.text = data
+        let picker = UIPickerView()
+        picker.delegate = self
+        picker.dataSource = self
+        chooseUniversity.inputView = picker
+        chooseUniversity.becomeFirstResponder()
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return data.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if(data[row] != "Select a University"){
+            chooseUniversity.text = data[row]
+            nextButton.enabled = true
+        } else {
+            nextButton.enabled = false
         }
     }
     
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return data[row];
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

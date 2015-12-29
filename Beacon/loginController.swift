@@ -32,14 +32,14 @@ class LoginController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "login"){
             NSLog("Switching State!")
-            var state:String
-            if(mSwitch.on){
-                state = "ON"
-            }
-            else{
-                state = "OFF"
-            }
-            (segue.destinationViewController as! chooseUniversityController).data = state
+            //var state:String
+//            if(mSwitch.on){
+//                state = "ON"
+//            }
+//            else{
+//                state = "OFF"
+//            }
+//            (segue.destinationViewController as! chooseUniversityController).data = state
         }
     }
 }
