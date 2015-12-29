@@ -135,6 +135,25 @@
             </objects>
             <point key="canvasLocation" x="1392" y="-590"/>
         </scene>
+        <!--Add Course Controller-->
+        <scene sceneID="B32-e6-QLS">
+            <objects>
+                <viewController id="CBP-xS-di0" customClass="AddCourseController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9AC-wW-VUm"/>
+                        <viewControllerLayoutGuide type="bottom" id="EIe-lM-vE1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="x6X-ls-z7r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nhw-7V-hFy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1763" y="-1145"/>
+        </scene>
         <!--Your Courses-->
         <scene sceneID="7Ic-rN-5xX">
             <objects>
@@ -150,7 +169,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Your Courses" id="kTI-Qc-jWa">
                         <barButtonItem key="backBarButtonItem" title=" " id="Whq-kI-2RD"/>
-                        <barButtonItem key="rightBarButtonItem" title="Finish" id="5vx-ec-Qxz"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" id="d4k-NS-iEO">
+                            <connections>
+                                <segue destination="CBP-xS-di0" kind="presentation" id="9ba-Do-mfj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
@@ -177,4 +200,7 @@
             <point key="canvasLocation" x="244" y="-329"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="plus" width="25" height="25"/>
+    </resources>
 </document>

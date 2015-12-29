@@ -9,10 +9,13 @@
 import UIKit
 
 class LoginController: UIViewController {
-
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     @IBOutlet weak var mSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(appDelegate.data)
+        appDelegate.data = "Changed Test Data"
+        print(appDelegate.data)
         // Do any additional setup after loading the view, typically from a nib.
     }
 

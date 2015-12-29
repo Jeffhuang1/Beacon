@@ -1,18 +1,18 @@
 //
-//  mainController.swift
+//  addCourseController.swift
 //  Beacon
 //
-//  Created by Jeffrey Huang on 2015-12-28.
+//  Created by Jeffrey Huang on 2015-12-29.
 //  Copyright © 2015 Jeffrey Huang. All rights reserved.
 //
 
+
 import UIKit
 
-class MainController: UIViewController {
-    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+class AddCourseController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(appDelegate.data)
         // Do any additional setup after loading the view, typically from a nib.
     }
     

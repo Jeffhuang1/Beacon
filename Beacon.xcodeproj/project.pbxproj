@@ -16,6 +16,7 @@
 		00EFE0D41C3237AA00DDAD80 /* chooseUniversityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D31C3237AA00DDAD80 /* chooseUniversityController.swift */; };
 		00EFE0D61C3246B100DDAD80 /* mainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D51C3246B100DDAD80 /* mainController.swift */; };
 		00EFE0D81C333FF700DDAD80 /* yourCoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D71C333FF700DDAD80 /* yourCoursesController.swift */; };
+		00EFE0DA1C33482800DDAD80 /* addCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D91C33482800DDAD80 /* addCourseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		00EFE0D31C3237AA00DDAD80 /* chooseUniversityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = chooseUniversityController.swift; sourceTree = "<group>"; };
 		00EFE0D51C3246B100DDAD80 /* mainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainController.swift; sourceTree = "<group>"; };
 		00EFE0D71C333FF700DDAD80 /* yourCoursesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yourCoursesController.swift; sourceTree = "<group>"; };
+		00EFE0D91C33482800DDAD80 /* addCourseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCourseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				00EFE0B31C3235DF00DDAD80 /* AppDelegate.swift */,
 				00EFE0B51C3235DF00DDAD80 /* loginController.swift */,
 				00EFE0B71C3235DF00DDAD80 /* Main.storyboard */,
+				00EFE0D91C33482800DDAD80 /* addCourseController.swift */,
 				00EFE0D51C3246B100DDAD80 /* mainController.swift */,
 				00EFE0D71C333FF700DDAD80 /* yourCoursesController.swift */,
 				00EFE0D31C3237AA00DDAD80 /* chooseUniversityController.swift */,
@@ -208,6 +211,7 @@
 			files = (
 				00EFE0D61C3246B100DDAD80 /* mainController.swift in Sources */,
 				00EFE0B61C3235DF00DDAD80 /* loginController.swift in Sources */,
+				00EFE0DA1C33482800DDAD80 /* addCourseController.swift in Sources */,
 				00EFE0D81C333FF700DDAD80 /* yourCoursesController.swift in Sources */,
 				00EFE0D41C3237AA00DDAD80 /* chooseUniversityController.swift in Sources */,
 				00EFE0B41C3235DF00DDAD80 /* AppDelegate.swift in Sources */,
