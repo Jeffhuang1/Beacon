@@ -7,15 +7,25 @@
 //
 
 import UIKit
+import FBSDKLoginKit
+import FBSDKCoreKit
 
-class LoginController: UIViewController {
+class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     @IBOutlet weak var mSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(appDelegate.data)
-        appDelegate.data = "Changed Test Data"
-        print(appDelegate.data)
+        if(FBSDKAccessToken.currentAccessToken() == nil){
+            print("Not logged In")
+        }
+        else{
+            print("Logged In")
+        }
+        let loginButton = FBSDKLoginButton()
+        loginButton.readPermissions = ["public_profile","email","user_friends"]
+        loginButton.center = self.view.center
+        loginButton.delegate = self
+        self.view.addSubview(loginButton)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -44,5 +54,18 @@ class LoginController: UIViewController {
 //            }
 //            (segue.destinationViewController as! chooseUniversityController).data = state
         }
+    }
+    
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        if(error == nil){
+            print("login complete")
+            self.performSegueWithIdentifier("login", sender: self)
+        } else {
+            print(error)
+        }
+    }
+    
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        print("User logged out")
     }
 }

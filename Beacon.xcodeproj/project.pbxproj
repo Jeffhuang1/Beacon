@@ -17,6 +17,8 @@
 		00EFE0D61C3246B100DDAD80 /* mainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D51C3246B100DDAD80 /* mainController.swift */; };
 		00EFE0D81C333FF700DDAD80 /* yourCoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D71C333FF700DDAD80 /* yourCoursesController.swift */; };
 		00EFE0DA1C33482800DDAD80 /* addCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D91C33482800DDAD80 /* addCourseController.swift */; };
+		00EFE0E51C33548900DDAD80 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EFE0E41C33548900DDAD80 /* FBSDKCoreKit.framework */; };
+		00EFE0E71C3358BB00DDAD80 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EFE0E61C3358BB00DDAD80 /* FBSDKLoginKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		00EFE0D51C3246B100DDAD80 /* mainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainController.swift; sourceTree = "<group>"; };
 		00EFE0D71C333FF700DDAD80 /* yourCoursesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yourCoursesController.swift; sourceTree = "<group>"; };
 		00EFE0D91C33482800DDAD80 /* addCourseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCourseController.swift; sourceTree = "<group>"; };
+		00EFE0E41C33548900DDAD80 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		00EFE0E61C3358BB00DDAD80 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +55,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00EFE0E71C3358BB00DDAD80 /* FBSDKLoginKit.framework in Frameworks */,
+				00EFE0E51C33548900DDAD80 /* FBSDKCoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -67,6 +73,7 @@
 		00EFE0A71C3235DF00DDAD80 = {
 			isa = PBXGroup;
 			children = (
+				00EFE0E31C33545100DDAD80 /* Frameworks */,
 				00EFE0B21C3235DF00DDAD80 /* Beacon */,
 				00EFE0C71C3235DF00DDAD80 /* BeaconTests */,
 				00EFE0B11C3235DF00DDAD80 /* Products */,
@@ -106,6 +113,15 @@
 				00EFE0CA1C3235DF00DDAD80 /* Info.plist */,
 			);
 			path = BeaconTests;
+			sourceTree = "<group>";
+		};
+		00EFE0E31C33545100DDAD80 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				00EFE0E61C3358BB00DDAD80 /* FBSDKLoginKit.framework */,
+				00EFE0E41C33548900DDAD80 /* FBSDKCoreKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,7 +359,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/Jeffrey/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Beacon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.jeffrey.Beacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -354,7 +376,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+					/Users/Jeffrey/Documents/FacebookSDK,
+				);
 				INFOPLIST_FILE = Beacon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.jeffrey.Beacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -404,6 +432,7 @@
 				00EFE0CF1C3235DF00DDAD80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		00EFE0D01C3235DF00DDAD80 /* Build configuration list for PBXNativeTarget "BeaconTests" */ = {
 			isa = XCConfigurationList;
@@ -412,6 +441,7 @@
 				00EFE0D21C3235DF00DDAD80 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
