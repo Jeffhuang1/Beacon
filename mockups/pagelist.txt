@@ -1,0 +1,8 @@
+Pages
+
+login
+select uni
+main (edit beacon, look for beacons, select courses, messages, change uni)
+edit beacon - has settings for beacon
+look for beacons - plots beacons on map
+messages
