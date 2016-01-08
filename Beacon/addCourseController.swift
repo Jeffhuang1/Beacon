@@ -12,7 +12,7 @@ import UIKit
 class AddCourseController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-
+    
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var courseSelection: UITextField!
     
