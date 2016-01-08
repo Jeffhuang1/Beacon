@@ -52,7 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func connectSocketIO(){
-        print("called connectSocketIO");
+        print("called connectSocketIO facebook Token = ", FBSDKAccessToken.currentAccessToken().tokenString)
+        self.socket.connectParams = ["key": "bar"]
         self.socket.connect()
         self.addSocketHandlers()
     }
