@@ -9,6 +9,8 @@
 import UIKit
 import FBSDKCoreKit
 
+let onConnectNotificationKey = "onConnect"
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var courses: [String] = []
     
-
+    let socket = SocketIOClient(socketURL: "https://ece106.com", options: ["cookies": ["foo","jar"]])
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
@@ -49,6 +51,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func connectSocketIO(){
+        print("called connectSocketIO");
+        self.socket.connect()
+        self.addSocketHandlers()
+    }
+    
+    func addSocketHandlers(){
+        self.socket.onAny {print("Got event: \($0.event), with items: \($0.items)")}
+        
+        self.socket.on("connectionSuccessful") {data, ack in
+            print("received connectionSuccessful")
+            print(data)
+            NSNotificationCenter.defaultCenter().postNotificationName(onConnectNotificationKey, object: self)
+            return
+        }
+    }
 }
 

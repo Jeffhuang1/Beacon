@@ -13,6 +13,8 @@ class MainController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(appDelegate.data)
+        appDelegate.connectSocketIO()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onConnectHandler", name: onConnectNotificationKey, object: nil)
         // Do any additional setup after loading the view, typically from a nib.
     }
     override func viewDidAppear(animated: Bool) {
@@ -21,5 +23,9 @@ class MainController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func onConnectHandler(){
+        print("connect Handler in Main Controller")
     }
 }
