@@ -39,7 +39,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             performSegueWithIdentifier("autoLogin", sender: self)
         }
         else{
-            performSegueWithIdentifier("login", sender: self)
+        performSegueWithIdentifier("login", sender: self)
         }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
