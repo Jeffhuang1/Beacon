@@ -19,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var courses: [String] = []
     
+    var current_course: String = ""
+    var current_course_description: String = ""
+    
+    var first_run = true
+    
     let socket = SocketIOClient(socketURL: "https://ece106.com", options: ["cookies": ["foo","jar"]])
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.

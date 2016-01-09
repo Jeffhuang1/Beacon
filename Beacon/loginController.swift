@@ -20,6 +20,8 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         }
         else{
             print("Logged In")
+            appDelegate.first_run = false
+            //self.performSegueWithIdentifier("autoLogin", sender: self)
         }
         let loginButton = FBSDKLoginButton()
         loginButton.readPermissions = ["public_profile","email","user_friends"]

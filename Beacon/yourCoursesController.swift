@@ -39,7 +39,7 @@ class YourCoursesController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell:UITableViewCell = self.courseTable
+        let cell:UITableViewCell = self.courseTable
         .dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
         if appDelegate.courses.count > 0 {
         

@@ -10,6 +10,8 @@ import UIKit
 
 class chooseUniversityController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var chooseUniversity: UITextField!
     var data = [
@@ -47,6 +49,13 @@ class chooseUniversityController: UIViewController, UIPickerViewDataSource, UIPi
     
     func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return data[row];
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if !(appDelegate.first_run) {
+            nextButton.tintColor = UIColor.clearColor()
+            nextButton.enabled = false
+        }
     }
 
     override func didReceiveMemoryWarning() {

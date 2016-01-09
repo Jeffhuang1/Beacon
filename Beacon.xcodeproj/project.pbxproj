@@ -27,6 +27,8 @@
 		0006AE2A1C401A410065898D /* SocketTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0006AE161C401A410065898D /* SocketTypes.swift */; };
 		0006AE2B1C401A410065898D /* SwiftRegex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0006AE171C401A410065898D /* SwiftRegex.swift */; };
 		0006AE2C1C401A410065898D /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0006AE181C401A410065898D /* WebSocket.swift */; };
+		00A376D01C4175A00050FEDA /* myBeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A376CF1C4175A00050FEDA /* myBeaconController.swift */; };
+		00A376D31C417EF80050FEDA /* beaconCourseSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A376D11C417EF80050FEDA /* beaconCourseSelectionController.swift */; };
 		00EFE0B41C3235DF00DDAD80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0B31C3235DF00DDAD80 /* AppDelegate.swift */; };
 		00EFE0B61C3235DF00DDAD80 /* loginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0B51C3235DF00DDAD80 /* loginController.swift */; };
 		00EFE0B91C3235DF00DDAD80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00EFE0B71C3235DF00DDAD80 /* Main.storyboard */; };
@@ -72,6 +74,8 @@
 		0006AE161C401A410065898D /* SocketTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketTypes.swift; sourceTree = "<group>"; };
 		0006AE171C401A410065898D /* SwiftRegex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftRegex.swift; sourceTree = "<group>"; };
 		0006AE181C401A410065898D /* WebSocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
+		00A376CF1C4175A00050FEDA /* myBeaconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myBeaconController.swift; sourceTree = "<group>"; };
+		00A376D11C417EF80050FEDA /* beaconCourseSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beaconCourseSelectionController.swift; sourceTree = "<group>"; };
 		00EFE0B01C3235DF00DDAD80 /* Beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EFE0B31C3235DF00DDAD80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00EFE0B51C3235DF00DDAD80 /* loginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginController.swift; sourceTree = "<group>"; };
@@ -162,6 +166,8 @@
 			children = (
 				0006AE041C401A410065898D /* SocketIO */,
 				00EFE0B31C3235DF00DDAD80 /* AppDelegate.swift */,
+				00A376CF1C4175A00050FEDA /* myBeaconController.swift */,
+				00A376D11C417EF80050FEDA /* beaconCourseSelectionController.swift */,
 				00EFE0B51C3235DF00DDAD80 /* loginController.swift */,
 				00EFE0B71C3235DF00DDAD80 /* Main.storyboard */,
 				00EFE0D91C33482800DDAD80 /* addCourseController.swift */,
@@ -305,8 +311,10 @@
 				0006AE291C401A410065898D /* SocketStringReader.swift in Sources */,
 				0006AE2C1C401A410065898D /* WebSocket.swift in Sources */,
 				0006AE281C401A410065898D /* SocketParsable.swift in Sources */,
+				00A376D31C417EF80050FEDA /* beaconCourseSelectionController.swift in Sources */,
 				0006AE2A1C401A410065898D /* SocketTypes.swift in Sources */,
 				0006AE241C401A410065898D /* SocketIOClientOption.swift in Sources */,
+				00A376D01C4175A00050FEDA /* myBeaconController.swift in Sources */,
 				00EFE0DA1C33482800DDAD80 /* addCourseController.swift in Sources */,
 				0006AE271C401A410065898D /* SocketPacket.swift in Sources */,
 				0006AE1C1C401A410065898D /* SocketClientSpec.swift in Sources */,

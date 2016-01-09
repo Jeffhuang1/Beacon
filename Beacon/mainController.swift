@@ -16,6 +16,7 @@ class MainController: UIViewController {
         appDelegate.connectSocketIO()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onConnectHandler", name: onConnectNotificationKey, object: nil)
         // Do any additional setup after loading the view, typically from a nib.
+        appDelegate.first_run = false
     }
     override func viewDidAppear(animated: Bool) {
         self.tabBarController!.tabBar.hidden = false;
