@@ -18,7 +18,6 @@ class SettingsController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         settingsTable.delegate = self
         print(self.title)
     }
@@ -39,4 +38,7 @@ class SettingsController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+
 }

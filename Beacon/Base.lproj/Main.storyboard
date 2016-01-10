@@ -68,6 +68,7 @@
             <objects>
                 <tabBarController id="maV-c3-xKo" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Jmp-Tw-srd"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5jG-KO-1ii">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -76,6 +77,7 @@
                     <connections>
                         <segue destination="3hJ-8L-tzC" kind="relationship" relationship="viewControllers" id="PAC-gp-hX3"/>
                         <segue destination="QlB-HG-Duq" kind="relationship" relationship="viewControllers" id="a7L-WD-nMf"/>
+                        <segue destination="JQL-Ad-KYh" kind="relationship" relationship="viewControllers" id="Cx1-eJ-qRb"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iN6-Ny-0y4" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -87,6 +89,7 @@
             <objects>
                 <navigationController id="QlB-HG-Duq" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="4gr-iO-azZ"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GCs-lw-mhw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -340,10 +343,58 @@
             </objects>
             <point key="canvasLocation" x="1569" y="182"/>
         </scene>
-        <!--Find Beacons-->
+        <!--Item-->
+        <scene sceneID="BsQ-dU-87f">
+            <objects>
+                <navigationController id="JQL-Ad-KYh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="0zD-Tm-swu"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QuF-RK-OxI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0ml-J1-ev2" kind="relationship" relationship="rootViewController" id="aKP-DB-Ahz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hxt-9i-3Cv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-904" y="702"/>
+        </scene>
+        <!--Your Messages-->
+        <scene sceneID="vEB-hT-hn0">
+            <objects>
+                <viewController id="0ml-J1-ev2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nwe-19-2mD"/>
+                        <viewControllerLayoutGuide type="bottom" id="tRi-Nc-h5g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jKl-67-UuV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRl-zV-Snx">
+                                <rect key="frame" x="105" y="225" width="111" height="30"/>
+                                <state key="normal" title="Go to Messages"/>
+                                <connections>
+                                    <segue destination="YPy-zD-SoM" kind="show" id="JQU-8M-R2x"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" id="lbN-7x-Pga"/>
+                    <navigationItem key="navigationItem" title="Your Messages" id="0Yg-5c-cxL"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hLr-as-qwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-308" y="280"/>
+        </scene>
+        <!--Messages-->
         <scene sceneID="G6U-he-dNz">
             <objects>
-                <viewController id="YPy-zD-SoM" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="YPy-zD-SoM" customClass="MessagesViewController" customModule="Beacon" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="HgW-jZ-ocT"/>
                         <viewControllerLayoutGuide type="bottom" id="Qip-Hd-X7o"/>
@@ -354,12 +405,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="dDk-Tg-icN"/>
-                    <navigationItem key="navigationItem" title="Find Beacons" id="NID-VO-iC9"/>
+                    <navigationItem key="navigationItem" title="Messages" id="NID-VO-iC9"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ib5-ut-5fS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="532" y="472"/>
+            <point key="canvasLocation" x="58" y="268"/>
         </scene>
         <!--Choose University-->
         <scene sceneID="6ko-rG-QVF">
@@ -501,6 +552,7 @@
                 <navigationController title="Main" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="3hJ-8L-tzC" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="g1v-6T-jY1"/>
                     <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SIG-00-q2D">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

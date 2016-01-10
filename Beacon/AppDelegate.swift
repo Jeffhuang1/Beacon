@@ -16,12 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var data = "This is test data"
-    
+    var userMessages : [UserMessages] = []
     var courses: [String] = []
-    
     var current_course: String = ""
     var current_course_description: String = ""
-    
+    var fbId: String?
+    var fbName: String?
     var first_run = true
     
     let socket = SocketIOClient(socketURL: "https://ece106.com", options: ["cookies": ["foo","jar"]])
@@ -55,7 +55,82 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    func httpPost(params : Dictionary<String, String>, url : String, postCompleted : (succeeded: Bool, data: NSDictionary??) -> ()){
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://ece106.com/api/" + url)!)
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "POST"
+        request.HTTPBody = try? NSJSONSerialization.dataWithJSONObject(params, options: [])
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.addValue(FBSDKAccessToken.currentAccessToken().tokenString, forHTTPHeaderField: "Authorization")
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            let json = try? NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+            
+            // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
+                // The JSONObjectWithData constructor didn't return an error. But, we should still
+                // check and make sure that json has a value using optional binding.
+            if (json != nil) {
+                    // Okay, the parsedJSON is here, let's get the value for 'success' out of it
+                postCompleted(succeeded: true, data: json)
+            }
+            else {
+                    // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
+                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Error could not parse JSON: \(jsonStr)")
+                postCompleted(succeeded: false, data: nil)
+            }
+        })
+        
+        task.resume()
+    }
+    
+    func httpGet(url : String, getCompleted : (succeeded: Bool, data: NSDictionary??) -> ()){
+        let request = NSMutableURLRequest(URL: NSURL(string: "https://ece106.com/api/" + url)!)
+        let session = NSURLSession.sharedSession()
+        request.HTTPMethod = "GET"
+        request.addValue(FBSDKAccessToken.currentAccessToken().tokenString, forHTTPHeaderField: "Authorization")
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
+            let json = try? NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+            
+            // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
+            // The JSONObjectWithData constructor didn't return an error. But, we should still
+            // check and make sure that json has a value using optional binding.
+            if (json != nil) {
+                // Okay, the parsedJSON is here, let's get the value for 'success' out of it
+                getCompleted(succeeded: true, data: json)
+            }
+            else {
+                // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
+                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                print("Error could not parse JSON: \(jsonStr)")
+                getCompleted(succeeded: false, data: nil)
+            }
+        })
+        
+        task.resume()
+    }
+    func loadServerData(){
+        if(FBSDKAccessToken.currentAccessToken() != nil){
+            _ = FBSDKGraphRequest.init(graphPath: "me", parameters: nil).startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
+                if(error != nil){
+                    print("error", error)
+                }else{
+                    self.fbId = String(result["id"])
+                    self.fbName = String(result["name"])
+                    self.httpGet("user/?id=1018229131578227", getCompleted: { (succeeded, data) -> Void in
+                        print("http get request result", data)
+                    })
+                    self.httpPost(["username":"jameson", "password":"password"], url: "send", postCompleted: { (succeeded, data) -> Void in
+                        print("http post request result", data)
+                    })
+                }
+            })
+        }
+        
+    }
+    
     func connectSocketIO(){
         print("called connectSocketIO facebook Token = ", FBSDKAccessToken.currentAccessToken().tokenString)
         self.socket.connectParams = ["key": "bar"]

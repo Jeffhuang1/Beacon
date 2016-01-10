@@ -27,6 +27,7 @@ class myBeaconController: UIViewController, UITextViewDelegate {
         super.viewDidLoad()
         
         appDelegate.connectSocketIO()
+        appDelegate.loadServerData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onConnectHandler", name: onConnectNotificationKey, object: nil)
         // Do any additional setup after loading the view, typically from a nib.
         appDelegate.first_run = false
