@@ -87,10 +87,27 @@
 		00EFE0D61C3246B100DDAD80 /* mainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D51C3246B100DDAD80 /* mainController.swift */; };
 		00EFE0D81C333FF700DDAD80 /* yourCoursesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D71C333FF700DDAD80 /* yourCoursesController.swift */; };
 		00EFE0DA1C33482800DDAD80 /* addCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D91C33482800DDAD80 /* addCourseController.swift */; };
-		00EFE0E51C33548900DDAD80 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EFE0E41C33548900DDAD80 /* FBSDKCoreKit.framework */; };
-		00EFE0E71C3358BB00DDAD80 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EFE0E61C3358BB00DDAD80 /* FBSDKLoginKit.framework */; };
 		00F2BFFC1C42BB5A008B117C /* messagingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F2BFFB1C42BB5A008B117C /* messagingCell.xib */; };
 		00F2BFFE1C42BEA3008B117C /* messagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2BFFD1C42BEA2008B117C /* messagingCell.swift */; };
+		9A27482E1C42DC50008D5392 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A27482C1C42DC50008D5392 /* FBSDKCoreKit.framework */; };
+		9A27482F1C42DC50008D5392 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A27482D1C42DC50008D5392 /* FBSDKLoginKit.framework */; };
+		9A2748331C42E3D3008D5392 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748321C42E3D3008D5392 /* AVFoundation.framework */; };
+		9A2748351C42E3DD008D5392 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748341C42E3DD008D5392 /* CoreData.framework */; };
+		9A2748371C42E3E8008D5392 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748361C42E3E8008D5392 /* CoreLocation.framework */; };
+		9A2748391C42E3F5008D5392 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748381C42E3F5008D5392 /* CoreText.framework */; };
+		9A27483B1C42E400008D5392 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A27483A1C42E400008D5392 /* GLKit.framework */; };
+		9A27483D1C42E40A008D5392 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A27483C1C42E40A008D5392 /* ImageIO.framework */; };
+		9A27483F1C42E425008D5392 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A27483E1C42E425008D5392 /* libc++.tbd */; };
+		9A2748411C42E433008D5392 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748401C42E433008D5392 /* libicucore.tbd */; };
+		9A2748431C42E43D008D5392 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748421C42E43D008D5392 /* libz.tbd */; };
+		9A2748451C42E45C008D5392 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748441C42E45C008D5392 /* OpenGLES.framework */; };
+		9A2748471C42E467008D5392 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748461C42E467008D5392 /* QuartzCore.framework */; };
+		9A2748491C42E473008D5392 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748481C42E473008D5392 /* SystemConfiguration.framework */; };
+		9A27484D1C42E808008D5392 /* beaconSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A27484C1C42E808008D5392 /* beaconSearchController.swift */; };
+		9A27484F1C42EA91008D5392 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A27484E1C42EA91008D5392 /* CoreBluetooth.framework */; };
+		9A2748511C42EA9C008D5392 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748501C42EA9C008D5392 /* Accelerate.framework */; };
+		9A2748541C42F429008D5392 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748531C42F429008D5392 /* GoogleMaps.framework */; };
+		9A2748561C42F452008D5392 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9A2748551C42F452008D5392 /* GoogleMaps.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,10 +250,27 @@
 		00EFE0D51C3246B100DDAD80 /* mainController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainController.swift; sourceTree = "<group>"; };
 		00EFE0D71C333FF700DDAD80 /* yourCoursesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yourCoursesController.swift; sourceTree = "<group>"; };
 		00EFE0D91C33482800DDAD80 /* addCourseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCourseController.swift; sourceTree = "<group>"; };
-		00EFE0E41C33548900DDAD80 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		00EFE0E61C3358BB00DDAD80 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		00F2BFFB1C42BB5A008B117C /* messagingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messagingCell.xib; sourceTree = "<group>"; };
 		00F2BFFD1C42BEA2008B117C /* messagingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = messagingCell.swift; sourceTree = "<group>"; };
+		9A27482C1C42DC50008D5392 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		9A27482D1C42DC50008D5392 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		9A2748321C42E3D3008D5392 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		9A2748341C42E3DD008D5392 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9A2748361C42E3E8008D5392 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		9A2748381C42E3F5008D5392 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		9A27483A1C42E400008D5392 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		9A27483C1C42E40A008D5392 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		9A27483E1C42E425008D5392 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		9A2748401C42E433008D5392 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		9A2748421C42E43D008D5392 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		9A2748441C42E45C008D5392 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		9A2748461C42E467008D5392 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9A2748481C42E473008D5392 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9A27484C1C42E808008D5392 /* beaconSearchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beaconSearchController.swift; sourceTree = "<group>"; };
+		9A27484E1C42EA91008D5392 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		9A2748501C42EA9C008D5392 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		9A2748531C42F429008D5392 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		9A2748551C42F452008D5392 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -244,9 +278,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A2748511C42EA9C008D5392 /* Accelerate.framework in Frameworks */,
+				9A27484F1C42EA91008D5392 /* CoreBluetooth.framework in Frameworks */,
+				9A2748491C42E473008D5392 /* SystemConfiguration.framework in Frameworks */,
+				9A2748471C42E467008D5392 /* QuartzCore.framework in Frameworks */,
+				9A2748451C42E45C008D5392 /* OpenGLES.framework in Frameworks */,
+				9A2748431C42E43D008D5392 /* libz.tbd in Frameworks */,
+				9A2748541C42F429008D5392 /* GoogleMaps.framework in Frameworks */,
+				9A2748411C42E433008D5392 /* libicucore.tbd in Frameworks */,
+				9A27483F1C42E425008D5392 /* libc++.tbd in Frameworks */,
+				9A27483D1C42E40A008D5392 /* ImageIO.framework in Frameworks */,
+				9A27483B1C42E400008D5392 /* GLKit.framework in Frameworks */,
+				9A2748391C42E3F5008D5392 /* CoreText.framework in Frameworks */,
+				9A2748371C42E3E8008D5392 /* CoreLocation.framework in Frameworks */,
+				9A2748351C42E3DD008D5392 /* CoreData.framework in Frameworks */,
+				9A2748331C42E3D3008D5392 /* AVFoundation.framework in Frameworks */,
 				0059CBBC1C420D5400CA2047 /* AudioToolbox.framework in Frameworks */,
-				00EFE0E71C3358BB00DDAD80 /* FBSDKLoginKit.framework in Frameworks */,
-				00EFE0E51C33548900DDAD80 /* FBSDKCoreKit.framework in Frameworks */,
+				9A27482E1C42DC50008D5392 /* FBSDKCoreKit.framework in Frameworks */,
+				9A27482F1C42DC50008D5392 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,6 +517,7 @@
 				00A376D11C417EF80050FEDA /* beaconCourseSelectionController.swift */,
 				00EFE0B51C3235DF00DDAD80 /* loginController.swift */,
 				00EFE0B71C3235DF00DDAD80 /* Main.storyboard */,
+				9A27484C1C42E808008D5392 /* beaconSearchController.swift */,
 				00F2BFFB1C42BB5A008B117C /* messagingCell.xib */,
 				00F2BFFD1C42BEA2008B117C /* messagingCell.swift */,
 				001F43BD1C42974C0068B12C /* yourMessagesViewController.swift */,
@@ -497,9 +547,25 @@
 		00EFE0E31C33545100DDAD80 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9A2748551C42F452008D5392 /* GoogleMaps.bundle */,
+				9A2748531C42F429008D5392 /* GoogleMaps.framework */,
+				9A2748501C42EA9C008D5392 /* Accelerate.framework */,
+				9A27484E1C42EA91008D5392 /* CoreBluetooth.framework */,
+				9A2748481C42E473008D5392 /* SystemConfiguration.framework */,
+				9A2748461C42E467008D5392 /* QuartzCore.framework */,
+				9A2748441C42E45C008D5392 /* OpenGLES.framework */,
+				9A2748421C42E43D008D5392 /* libz.tbd */,
+				9A2748401C42E433008D5392 /* libicucore.tbd */,
+				9A27483E1C42E425008D5392 /* libc++.tbd */,
+				9A27483C1C42E40A008D5392 /* ImageIO.framework */,
+				9A27483A1C42E400008D5392 /* GLKit.framework */,
+				9A2748381C42E3F5008D5392 /* CoreText.framework */,
+				9A2748361C42E3E8008D5392 /* CoreLocation.framework */,
+				9A2748341C42E3DD008D5392 /* CoreData.framework */,
+				9A2748321C42E3D3008D5392 /* AVFoundation.framework */,
 				0059CBBB1C420D5400CA2047 /* AudioToolbox.framework */,
-				00EFE0E61C3358BB00DDAD80 /* FBSDKLoginKit.framework */,
-				00EFE0E41C33548900DDAD80 /* FBSDKCoreKit.framework */,
+				9A27482C1C42DC50008D5392 /* FBSDKCoreKit.framework */,
+				9A27482D1C42DC50008D5392 /* FBSDKLoginKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -589,6 +655,7 @@
 				0059CC6C1C420E1A00CA2047 /* JSQMessagesCollectionViewCellIncoming.xib in Resources */,
 				0059CC4D1C420E1A00CA2047 /* JSQMessagesAssets.bundle in Resources */,
 				0059CC6E1C420E1A00CA2047 /* JSQMessagesCollectionViewCellOutgoing.xib in Resources */,
+				9A2748561C42F452008D5392 /* GoogleMaps.bundle in Resources */,
 				00EFE0BE1C3235DF00DDAD80 /* LaunchScreen.storyboard in Resources */,
 				00EFE0BB1C3235DF00DDAD80 /* Assets.xcassets in Resources */,
 				0059CC781C420E1A00CA2047 /* JSQMessagesTypingIndicatorFooterView.xib in Resources */,
@@ -651,6 +718,7 @@
 				0059CC621C420E1A00CA2047 /* JSQMediaItem.m in Sources */,
 				0059CBAC1C420AFC00CA2047 /* SocketEngineSpec.swift in Sources */,
 				0059CBB31C420AFC00CA2047 /* SocketPacket.swift in Sources */,
+				9A27484D1C42E808008D5392 /* beaconSearchController.swift in Sources */,
 				0059CBAD1C420AFC00CA2047 /* SocketEventHandler.swift in Sources */,
 				0059CC771C420E1A00CA2047 /* JSQMessagesTypingIndicatorFooterView.m in Sources */,
 				0059CBB01C420AFC00CA2047 /* SocketIOClientOption.swift in Sources */,
@@ -815,7 +883,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/Jeffrey/Documents/FacebookSDK,
+					/Users/emilysemple/Documents/FacebookSDK,
+					/Users/emilysemple/Desktop/wrench_porn/googlemaps,
+					/Users/emilysemple/Desktop/wrench_porn/googlemaps/Frameworks,
 				);
 				INFOPLIST_FILE = Beacon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -823,7 +893,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.jeffrey.Beacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Jeffrey/github/Beacon/Beacon-Bridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/emilysemple/Desktop/wrench_porn/beacon/Beacon-Bridge.h";
 			};
 			name = Debug;
 		};
@@ -835,7 +905,9 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
-					/Users/Jeffrey/Documents/FacebookSDK,
+					/Users/emilysemple/Documents/FacebookSDK,
+					/Users/emilysemple/Desktop/wrench_porn/googlemaps,
+					/Users/emilysemple/Desktop/wrench_porn/googlemaps/Frameworks,
 				);
 				INFOPLIST_FILE = Beacon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -843,7 +915,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.jeffrey.Beacon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/Jeffrey/github/Beacon/Beacon-Bridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/emilysemple/Desktop/wrench_porn/beacon/Beacon-Bridge.h";
 			};
 			name = Release;
 		};

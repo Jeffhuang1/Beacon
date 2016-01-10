@@ -8,6 +8,7 @@
 
 import UIKit
 import FBSDKCoreKit
+import GoogleMaps
 
 let onConnectNotificationKey = "onConnect"
 
@@ -29,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let socket = SocketIOClient(socketURL: "https://ece106.com", options: ["cookies": ["foo","jar"]])
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        GMSServices.provideAPIKey("AIzaSyAEhvJGGBYD8AA4JtAoZI6fHvMCxI7opwk")
+        print("api key provided")
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
     }
     

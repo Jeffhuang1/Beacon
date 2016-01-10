@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="maV-c3-xKo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="maV-c3-xKo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -78,17 +78,18 @@
                         <segue destination="3hJ-8L-tzC" kind="relationship" relationship="viewControllers" id="PAC-gp-hX3"/>
                         <segue destination="QlB-HG-Duq" kind="relationship" relationship="viewControllers" id="a7L-WD-nMf"/>
                         <segue destination="JQL-Ad-KYh" kind="relationship" relationship="viewControllers" id="Cx1-eJ-qRb"/>
+                        <segue destination="eJW-L8-Rkf" kind="relationship" relationship="viewControllers" id="Bls-np-TWj"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iN6-Ny-0y4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-940" y="70"/>
+            <point key="canvasLocation" x="-1020" y="238"/>
         </scene>
-        <!--Item-->
+        <!--Settings-->
         <scene sceneID="27B-KX-TAo">
             <objects>
                 <navigationController id="QlB-HG-Duq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="4gr-iO-azZ"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="4gr-iO-azZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GCs-lw-mhw">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -114,10 +115,10 @@
                             <tableViewSection headerTitle="My Beacon" footerTitle="Automatically disable your beacon when your device moves away from the location it was set at" id="Xh1-8S-Dbu">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="xqI-ve-FLM">
-                                        <rect key="frame" x="0.0" y="113.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="114" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xqI-ve-FLM" id="qT7-Pf-2DJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Auto-disable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVd-GM-OVK">
@@ -137,10 +138,10 @@
                             <tableViewSection id="DXP-YU-h8z">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="yjl-TK-PLh">
-                                        <rect key="frame" x="0.0" y="218.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="219" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yjl-TK-PLh" id="G2O-ep-kbu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change your university" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCf-rE-iJE">
@@ -162,10 +163,10 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kry-EY-bup">
-                                        <rect key="frame" x="0.0" y="262.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="263" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kry-EY-bup" id="TQg-uK-jcG">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit courses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvH-ym-7lw">
@@ -191,10 +192,10 @@
                             <tableViewSection headerTitle="Facebook" footerTitle="Beacon needs to be logged into Facebook to work" id="Ynn-Gz-XrF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="g3o-45-gfw">
-                                        <rect key="frame" x="0.0" y="356.5" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="358" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g3o-45-gfw" id="EoK-8v-Y1O">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log out of Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybu-at-blc">
@@ -343,11 +344,11 @@
             </objects>
             <point key="canvasLocation" x="1569" y="182"/>
         </scene>
-        <!--Item-->
+        <!--Messages-->
         <scene sceneID="BsQ-dU-87f">
             <objects>
                 <navigationController id="JQL-Ad-KYh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="0zD-Tm-swu"/>
+                    <tabBarItem key="tabBarItem" title="Messages" id="0zD-Tm-swu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QuF-RK-OxI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -360,6 +361,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxt-9i-3Cv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-448" y="288"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="0bG-bG-Uvp">
+            <objects>
+                <navigationController id="eJW-L8-Rkf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" id="y1A-TF-WBc"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cij-sd-DHv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ALE-05-3lm" kind="relationship" relationship="rootViewController" id="wl1-b5-VzM"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aO9-mz-S8T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1026" y="1092"/>
         </scene>
         <!--Your Messages-->
         <scene sceneID="vEB-hT-hn0">
@@ -551,7 +570,7 @@
         <scene sceneID="AYh-id-tmG">
             <objects>
                 <navigationController title="Main" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="3hJ-8L-tzC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="g1v-6T-jY1"/>
+                    <tabBarItem key="tabBarItem" title="My Beacon" id="g1v-6T-jY1"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="SIG-00-q2D">
@@ -692,6 +711,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SaV-IS-exc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1020" y="-2286"/>
+        </scene>
+        <!--Nearby Beacons-->
+        <scene sceneID="5fX-Qg-Mc3">
+            <objects>
+                <viewController id="ALE-05-3lm" customClass="beaconSearchController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KJF-kM-a2x"/>
+                        <viewControllerLayoutGuide type="bottom" id="cCz-Bv-DB3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gMK-7r-hzl" customClass="GMSMapView">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Nearby Beacons" id="NVm-6s-dqq"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fYS-vf-7wT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-360" y="1092"/>
         </scene>
     </scenes>
     <resources>
