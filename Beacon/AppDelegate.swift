@@ -115,7 +115,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     func loadServerData(){
         if(FBSDKAccessToken.currentAccessToken() != nil){
-            _ = FBSDKGraphRequest.init(graphPath: "me", parameters: nil).startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
+            _ = FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"id,name"]).startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
                 if(error != nil){
                     print("error", error)
                 }else{
