@@ -16,13 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var data = "This is test data"
-    var userMessages : [UserMessages] = []
+    var userMessages: [UserMessages] = []
     var courses: [String] = []
     var current_course: String = ""
     var current_course_description: String = ""
     var fbId: String?
     var fbName: String?
     var first_run = true
+    
+    
     
     let socket = SocketIOClient(socketURL: "https://ece106.com", options: ["cookies": ["foo","jar"]])
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -119,34 +121,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }else{
                     self.fbId = String(result["id"])
                     self.fbName = String(result["name"])
-                    self.httpGet("user/?id=1018229131578227", getCompleted: { (succeeded, data) -> Void in
-                        print("http get request result", data, succeeded)
-                    })
-                    self.httpPost(["username":"jameson", "password":"password"], url: "send", postCompleted: { (succeeded, data) -> Void in
-                        print("http post request result", data, succeeded)
-                    })
                 }
             })
         }
         
     }
     
+    func sendMessage(message: String, id: String) {
+        self.httpPost(["message": message, "id": id], url: "send", postCompleted: {
+            (succeeded, data) -> Void in
+            print("data: ", data)
+        })
+    }
+    
     func connectSocketIO(){
-        print("called connectSocketIO facebook Token = ", FBSDKAccessToken.currentAccessToken().tokenString)
+        //print("called connectSocketIO facebook Token = ", FBSDKAccessToken.currentAccessToken().tokenString)
         self.socket.connectParams = ["key": "bar"]
         self.socket.connect()
         self.addSocketHandlers()
     }
     
     func addSocketHandlers(){
-        self.socket.onAny {print("Got event: \($0.event), with items: \($0.items)")}
+        //self.socket.onAny {print("Got event: \($0.event), with items: \($0.items)")}
         
-        self.socket.on("connectionSuccessful") {data, ack in
+        /*self.socket.on("connectionSuccessful") {data, ack in
             print("received connectionSuccessful")
             print(data)
             NSNotificationCenter.defaultCenter().postNotificationName(onConnectNotificationKey, object: self)
             return
-        }
+        }*/
     }
 }
 

@@ -89,6 +89,8 @@
 		00EFE0DA1C33482800DDAD80 /* addCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D91C33482800DDAD80 /* addCourseController.swift */; };
 		00EFE0E51C33548900DDAD80 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EFE0E41C33548900DDAD80 /* FBSDKCoreKit.framework */; };
 		00EFE0E71C3358BB00DDAD80 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00EFE0E61C3358BB00DDAD80 /* FBSDKLoginKit.framework */; };
+		00F2BFFC1C42BB5A008B117C /* messagingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F2BFFB1C42BB5A008B117C /* messagingCell.xib */; };
+		00F2BFFE1C42BEA3008B117C /* messagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2BFFD1C42BEA2008B117C /* messagingCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -233,6 +235,8 @@
 		00EFE0D91C33482800DDAD80 /* addCourseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCourseController.swift; sourceTree = "<group>"; };
 		00EFE0E41C33548900DDAD80 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
 		00EFE0E61C3358BB00DDAD80 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		00F2BFFB1C42BB5A008B117C /* messagingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messagingCell.xib; sourceTree = "<group>"; };
+		00F2BFFD1C42BEA2008B117C /* messagingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = messagingCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -464,6 +468,8 @@
 				00A376D11C417EF80050FEDA /* beaconCourseSelectionController.swift */,
 				00EFE0B51C3235DF00DDAD80 /* loginController.swift */,
 				00EFE0B71C3235DF00DDAD80 /* Main.storyboard */,
+				00F2BFFB1C42BB5A008B117C /* messagingCell.xib */,
+				00F2BFFD1C42BEA2008B117C /* messagingCell.swift */,
 				001F43BD1C42974C0068B12C /* yourMessagesViewController.swift */,
 				001F43BF1C4298370068B12C /* messagesClass.swift */,
 				0059CC791C420EAD00CA2047 /* messagesViewController.swift */,
@@ -590,6 +596,7 @@
 				0059CC761C420E1A00CA2047 /* JSQMessagesToolbarContentView.xib in Resources */,
 				0059CC571C420E1A00CA2047 /* JSQMessagesViewController.xib in Resources */,
 				0059CC731C420E1A00CA2047 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
+				00F2BFFC1C42BB5A008B117C /* messagingCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +628,7 @@
 				00EFE0B61C3235DF00DDAD80 /* loginController.swift in Sources */,
 				00A376D31C417EF80050FEDA /* beaconCourseSelectionController.swift in Sources */,
 				0059CC601C420E1A00CA2047 /* JSQMessagesCollectionViewLayoutAttributes.m in Sources */,
+				00F2BFFE1C42BEA3008B117C /* messagingCell.swift in Sources */,
 				0059CC611C420E1A00CA2047 /* JSQLocationMediaItem.m in Sources */,
 				001F43BE1C42974C0068B12C /* yourMessagesViewController.swift in Sources */,
 				0059CBBA1C420C2A00CA2047 /* settingsController.swift in Sources */,

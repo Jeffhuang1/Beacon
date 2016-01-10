@@ -364,7 +364,7 @@
         <!--Your Messages-->
         <scene sceneID="vEB-hT-hn0">
             <objects>
-                <viewController id="0ml-J1-ev2" sceneMemberID="viewController">
+                <viewController id="0ml-J1-ev2" customClass="YourMessagesViewController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nwe-19-2mD"/>
                         <viewControllerLayoutGuide type="bottom" id="tRi-Nc-h5g"/>
@@ -373,19 +373,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TRl-zV-Snx">
-                                <rect key="frame" x="105" y="225" width="111" height="30"/>
-                                <state key="normal" title="Go to Messages"/>
-                                <connections>
-                                    <segue destination="YPy-zD-SoM" kind="show" id="JQU-8M-R2x"/>
-                                </connections>
-                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2hu-yh-S04">
+                                <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="lbN-7x-Pga"/>
                     <navigationItem key="navigationItem" title="Your Messages" id="0Yg-5c-cxL"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="messageTable" destination="2hu-yh-S04" id="39S-r8-2KV"/>
+                        <segue destination="YPy-zD-SoM" kind="show" identifier="goToConversation" id="21f-ex-Rci"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hLr-as-qwF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
