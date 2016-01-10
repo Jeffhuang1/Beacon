@@ -11,6 +11,7 @@ import UIKit
 class YourCoursesController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var courseTable: UITableView!
+    @IBOutlet weak var doneButton: UIBarButtonItem!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
@@ -53,6 +54,12 @@ class YourCoursesController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     override func viewDidAppear(animated: Bool) {
-            self.courseTable.reloadData()
+        self.courseTable.reloadData()
+        
+        if (appDelegate.courses.count > 0 && doneButton != nil) {
+            
+            doneButton.enabled = true
+            //self.navigationItem.hidesBackButton = true
+        }
     }
 }

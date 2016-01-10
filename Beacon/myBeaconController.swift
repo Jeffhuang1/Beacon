@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FBSDKLoginKit
 
 class myBeaconController: UIViewController, UITextViewDelegate {
     
@@ -25,6 +26,11 @@ class myBeaconController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        appDelegate.connectSocketIO()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onConnectHandler", name: onConnectNotificationKey, object: nil)
+        // Do any additional setup after loading the view, typically from a nib.
+        appDelegate.first_run = false
+        
         if appDelegate.current_course_description != "" {
             courseDescription.text = appDelegate.current_course_description
         }
@@ -38,6 +44,7 @@ class myBeaconController: UIViewController, UITextViewDelegate {
         doneButton.enabled = false
         self.courseDescription.textContainer.lineFragmentPadding = 0;
         self.courseDescription.textContainerInset = UIEdgeInsetsMake(2,0,0,0);
+        self.navigationItem.hidesBackButton = true
     }
     
     func keyboardWillShow(notification:NSNotification) {
@@ -73,6 +80,11 @@ class myBeaconController: UIViewController, UITextViewDelegate {
         if appDelegate.current_course != "" {
             selectCourseButton.setTitle(appDelegate.current_course, forState: .Normal)
         }
+    
+        self.tabBarController!.tabBar.hidden = false;
+        if(FBSDKAccessToken.currentAccessToken() == nil){
+            self.navigationController!.popToRootViewControllerAnimated(true)
+        }
     }
     
     
@@ -94,5 +106,8 @@ class myBeaconController: UIViewController, UITextViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func onConnectHandler(){
+        print("connect Handler in MyBeacon Controller")
+    }
     
 }

@@ -9,7 +9,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" userLabel="Login" customClass="LoginController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="login" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" userLabel="Login" customClass="LoginController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="57" id="vHb-7S-gqQ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="La1-AD-nhN">
@@ -56,12 +56,12 @@
                     <connections>
                         <outlet property="mSwitch" destination="xMa-Mw-Azn" id="pqJ-Om-MSV"/>
                         <segue destination="kuX-KP-VsG" kind="show" identifier="login" id="K4x-oH-rGE"/>
-                        <segue destination="8Ik-UH-FLF" kind="show" identifier="autoLogin" id="47Z-eU-qe7"/>
+                        <segue destination="Wh5-Fm-w8k" kind="show" identifier="autoLogin" id="dC5-o2-QRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="974" y="-638"/>
+            <point key="canvasLocation" x="958" y="-548"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="2WR-xC-2no">
@@ -75,8 +75,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="3hJ-8L-tzC" kind="relationship" relationship="viewControllers" id="PAC-gp-hX3"/>
-                        <segue destination="Vd3-ln-ifq" kind="relationship" relationship="viewControllers" id="9WV-HC-CGx"/>
-                        <segue destination="1TR-6h-4Xl" kind="relationship" relationship="viewControllers" id="6yj-pR-zIa"/>
                         <segue destination="QlB-HG-Duq" kind="relationship" relationship="viewControllers" id="a7L-WD-nMf"/>
                     </connections>
                 </tabBarController>
@@ -99,16 +97,16 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MmP-AA-3HT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1797" y="1022"/>
+            <point key="canvasLocation" x="387" y="-1826"/>
         </scene>
-        <!--Settings-->
+        <!--settings-->
         <scene sceneID="wG5-WX-Cea">
             <objects>
-                <tableViewController id="7AZ-K9-6Zd" sceneMemberID="viewController">
+                <tableViewController title="settings" id="7AZ-K9-6Zd" customClass="SettingsController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="eKT-Jg-kUg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="My Beacon" footerTitle="Automatically disable your beacon when your device moves away from the location it was set at" id="Xh1-8S-Dbu">
                                 <cells>
@@ -122,7 +120,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location Auto-disable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVd-GM-OVK">
                                                     <rect key="frame" x="15" y="11" width="216" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ibZ-gM-5TD">
@@ -145,17 +143,20 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Change your university" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SCf-rE-iJE">
                                                     <rect key="frame" x="18" y="11" width="226" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iwT-g4-yjI">
                                                     <rect key="frame" x="252" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="EuM-6D-vOB" kind="show" identifier="editUniversity" id="Thl-us-Grr"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kry-EY-bup">
                                         <rect key="frame" x="0.0" y="262.5" width="320" height="44"/>
@@ -167,17 +168,20 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit courses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IvH-ym-7lw">
                                                     <rect key="frame" x="18" y="11" width="226" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="&gt;" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4w0-HC-lrP">
                                                     <rect key="frame" x="252" y="11" width="42" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="U7C-0G-DaS" kind="show" id="KjX-qv-cgt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -193,7 +197,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Log out of Facebook" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ybu-at-blc">
                                                     <rect key="frame" x="47" y="11" width="226" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -210,46 +214,13 @@
                     <tabBarItem key="tabBarItem" title="Item" id="Iie-FA-url"/>
                     <navigationItem key="navigationItem" title="Settings" id="HXp-Y7-fYw"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="settingsTable" destination="eKT-Jg-kUg" id="Erd-Ja-sw7"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eIR-48-ehY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1168" y="1042"/>
-        </scene>
-        <!--Find Beacons-->
-        <scene sceneID="oKI-5K-Dhs">
-            <objects>
-                <navigationController title="Find Beacons" id="Vd3-ln-ifq" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="b0a-XZ-vpV"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="RCa-Dh-8Yc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="YPy-zD-SoM" kind="relationship" relationship="rootViewController" id="qHf-fj-KQC"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="utE-SR-8h6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-32" y="922"/>
-        </scene>
-        <!--My Beacon-->
-        <scene sceneID="P2N-Re-TE5">
-            <objects>
-                <navigationController title="My Beacon" id="1TR-6h-4Xl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="BOT-79-0SU"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="r7A-gs-DFS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="Wh5-Fm-w8k" kind="relationship" relationship="rootViewController" id="Zmw-ar-gjt"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gwk-am-sVT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-68" y="2086"/>
+            <point key="canvasLocation" x="1008" y="-1696"/>
         </scene>
         <!--My Beacon-->
         <scene sceneID="qLV-jr-0XT">
@@ -271,7 +242,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Course:">
                                                 <attributes>
-                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
                                                     <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
@@ -284,7 +255,7 @@
                                         <attributedString key="attributedText">
                                             <fragment content="Description:">
                                                 <attributes>
-                                                    <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <font key="NSFont" size="14" name="HelveticaNeue-Bold"/>
                                                 </attributes>
                                             </fragment>
@@ -339,7 +310,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBf-P9-dIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="638" y="2102"/>
+            <point key="canvasLocation" x="1042" y="166"/>
         </scene>
         <!--Pick Beacon Course-->
         <scene sceneID="Iov-kg-xH2">
@@ -367,7 +338,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s0r-3S-1Ia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1229" y="2094"/>
+            <point key="canvasLocation" x="1569" y="182"/>
         </scene>
         <!--Find Beacons-->
         <scene sceneID="G6U-he-dNz">
@@ -388,43 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ib5-ut-5fS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="916" y="936"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="g5V-Zn-Yzz">
-            <objects>
-                <viewController storyboardIdentifier="main" id="8Ik-UH-FLF" customClass="MainController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ULq-Mg-25x"/>
-                        <viewControllerLayoutGuide type="bottom" id="quN-u4-itK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="sBf-Nr-lYP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the Main View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncc-TW-nuu">
-                                <rect key="frame" x="80" y="167" width="161" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ncc-TW-nuu" firstAttribute="centerX" secondItem="sBf-Nr-lYP" secondAttribute="centerX" id="9HF-Oa-Bjl"/>
-                            <constraint firstItem="ncc-TW-nuu" firstAttribute="top" secondItem="ULq-Mg-25x" secondAttribute="bottom" constant="103" id="AfB-vo-Q4O"/>
-                            <constraint firstItem="quN-u4-itK" firstAttribute="top" secondItem="ncc-TW-nuu" secondAttribute="bottom" constant="292" id="atY-Ls-clA"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="5WM-j0-j5E"/>
-                    <navigationItem key="navigationItem" title="Main" id="agq-Lz-Kg2">
-                        <barButtonItem key="backBarButtonItem" title=" " id="9N0-fr-7mo"/>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="f3X-hA-RNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="982" y="82"/>
+            <point key="canvasLocation" x="532" y="472"/>
         </scene>
         <!--Choose University-->
         <scene sceneID="6ko-rG-QVF">
@@ -538,8 +473,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Your Courses" id="kTI-Qc-jWa">
-                        <barButtonItem key="backBarButtonItem" title=" " id="Whq-kI-2RD"/>
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="0aO-tb-jRT"/>
+                        <barButtonItem key="backBarButtonItem" title="My Courses" id="Whq-kI-2RD"/>
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="Done" id="0aO-tb-jRT">
+                            <connections>
+                                <segue destination="Wh5-Fm-w8k" kind="show" id="QKD-dh-WQk"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="plus" id="d4k-NS-iEO">
                             <connections>
                                 <segue destination="CBP-xS-di0" kind="presentation" id="6Vi-cW-cUT"/>
@@ -549,11 +488,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="courseTable" destination="gwb-2w-ZwC" id="5VQ-oA-tWF"/>
+                        <outlet property="doneButton" destination="0aO-tb-jRT" id="oWm-E1-9y5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QPw-z3-yf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1763" y="-564"/>
+            <point key="canvasLocation" x="1787" y="-548"/>
         </scene>
         <!--Main-->
         <scene sceneID="AYh-id-tmG">
@@ -574,8 +514,137 @@
             </objects>
             <point key="canvasLocation" x="168" y="-898"/>
         </scene>
+        <!--Choose University-->
+        <scene sceneID="hok-zF-MX4">
+            <objects>
+                <viewController id="EuM-6D-vOB" customClass="chooseUniversityController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TgY-mM-J5n"/>
+                        <viewControllerLayoutGuide type="bottom" id="Wom-YP-b8V"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZEv-LJ-wzN">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Og-rz-2aj">
+                                <rect key="frame" x="20" y="135" width="280" height="30"/>
+                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Choose University" id="oYM-cW-BUY">
+                        <barButtonItem key="backBarButtonItem" title=" " id="n5h-Ql-PzE"/>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Next" id="owC-3A-fsg">
+                            <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="chooseUniversity" destination="4Og-rz-2aj" id="6Bc-FF-iJK"/>
+                        <outlet property="nextButton" destination="owC-3A-fsg" id="tGU-Vu-mJI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tyd-Pf-JKN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1420" y="-1696"/>
+        </scene>
+        <!--Add Course-->
+        <scene sceneID="qAT-Ul-85i">
+            <objects>
+                <viewController id="Owa-Ft-vjs" customClass="AddCourseController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mAc-IO-DLU"/>
+                        <viewControllerLayoutGuide type="bottom" id="fcy-s9-j6t"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uuL-eP-KTh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqZ-dA-m8e">
+                                <rect key="frame" x="20" y="209" width="280" height="30"/>
+                                <state key="normal" title="Add Course"/>
+                                <connections>
+                                    <action selector="addAndExit:" destination="Owa-Ft-vjs" eventType="touchUpInside" id="dtW-Hw-wzM"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yM0-eB-hEH">
+                                <rect key="frame" x="20" y="91" width="280" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yM0-eB-hEH" firstAttribute="top" secondItem="mAc-IO-DLU" secondAttribute="bottom" constant="27" id="0zU-Av-b25"/>
+                            <constraint firstItem="QqZ-dA-m8e" firstAttribute="leading" secondItem="yM0-eB-hEH" secondAttribute="leading" id="7t7-72-0dE"/>
+                            <constraint firstItem="yM0-eB-hEH" firstAttribute="trailing" secondItem="QqZ-dA-m8e" secondAttribute="trailing" id="BhW-he-Nwg"/>
+                            <constraint firstItem="QqZ-dA-m8e" firstAttribute="top" secondItem="yM0-eB-hEH" secondAttribute="bottom" constant="88" id="HXm-cO-Zl6"/>
+                            <constraint firstItem="yM0-eB-hEH" firstAttribute="centerX" secondItem="uuL-eP-KTh" secondAttribute="centerX" id="kKK-Cl-Epp"/>
+                            <constraint firstItem="yM0-eB-hEH" firstAttribute="leading" secondItem="uuL-eP-KTh" secondAttribute="leadingMargin" constant="4" id="zTn-Et-cde"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Add Course" id="T4b-VL-gGw"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="addButton" destination="QqZ-dA-m8e" id="AYB-j2-lmN"/>
+                        <outlet property="courseSelection" destination="yM0-eB-hEH" id="OoL-ge-qOv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9fy-bE-OtY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="996" y="-2883"/>
+        </scene>
+        <!--Your Courses-->
+        <scene sceneID="HQz-D5-5Pm">
+            <objects>
+                <viewController id="U7C-0G-DaS" customClass="YourCoursesController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CqY-vw-YGw"/>
+                        <viewControllerLayoutGuide type="bottom" id="SEQ-C4-moQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8Vr-3L-gHW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pKA-Ku-8Th">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <sections/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pKA-Ku-8Th" firstAttribute="top" secondItem="CqY-vw-YGw" secondAttribute="bottom" constant="-50" id="4Nk-aC-lML"/>
+                            <constraint firstItem="pKA-Ku-8Th" firstAttribute="bottom" secondItem="SEQ-C4-moQ" secondAttribute="top" id="EGj-bS-EyL"/>
+                            <constraint firstAttribute="trailing" secondItem="pKA-Ku-8Th" secondAttribute="trailing" id="qJY-h3-KaM"/>
+                            <constraint firstItem="pKA-Ku-8Th" firstAttribute="leading" secondItem="8Vr-3L-gHW" secondAttribute="leading" id="rky-ry-opH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Your Courses" id="TX0-sF-9My">
+                        <barButtonItem key="backBarButtonItem" title="My Courses" id="jRY-9c-sQQ"/>
+                        <barButtonItem key="rightBarButtonItem" image="plus" id="hd9-wf-eba">
+                            <connections>
+                                <segue destination="Owa-Ft-vjs" kind="presentation" id="8Y7-an-pAC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="courseTable" destination="pKA-Ku-8Th" id="bff-4f-eF7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SaV-IS-exc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020" y="-2286"/>
+        </scene>
     </scenes>
     <resources>
         <image name="plus" width="25" height="25"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="QKD-dh-WQk"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,15 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     @IBOutlet weak var mSwitch: UISwitch!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let loginButton = FBSDKLoginButton()
+        loginButton.readPermissions = ["public_profile","email","user_friends"]
+        loginButton.center = self.view.center
+        loginButton.delegate = self
+        self.view.addSubview(loginButton)
+        // Do any additional setup after loading the view, typically from a nib.
+    }
+    override func viewDidAppear(animated: Bool) {
+        self.tabBarController!.tabBar.hidden = true;
         if(FBSDKAccessToken.currentAccessToken() == nil){
             print("Not logged In")
         }
@@ -23,14 +32,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
             appDelegate.first_run = false
             //self.performSegueWithIdentifier("autoLogin", sender: self)
         }
-        let loginButton = FBSDKLoginButton()
-        loginButton.readPermissions = ["public_profile","email","user_friends"]
-        loginButton.center = self.view.center
-        loginButton.delegate = self
-        self.view.addSubview(loginButton)
-        // Do any additional setup after loading the view, typically from a nib.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,7 +48,7 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "login"){
-            NSLog("Switching State!")
+            (segue.destinationViewController as! chooseUniversityController).prevController = self.title!
             //var state:String
 //            if(mSwitch.on){
 //                state = "ON"

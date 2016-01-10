@@ -11,7 +11,7 @@ import UIKit
 class chooseUniversityController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-    
+    var prevController = ""
     @IBOutlet weak var nextButton: UIBarButtonItem!
     @IBOutlet weak var chooseUniversity: UITextField!
     var data = [
@@ -28,6 +28,7 @@ class chooseUniversityController: UIViewController, UIPickerViewDataSource, UIPi
         picker.dataSource = self
         chooseUniversity.inputView = picker
         chooseUniversity.becomeFirstResponder()
+        print(self.title)
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
@@ -41,7 +42,9 @@ class chooseUniversityController: UIViewController, UIPickerViewDataSource, UIPi
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if(data[row] != "Select a University"){
             chooseUniversity.text = data[row]
-            nextButton.enabled = true
+            if(self.prevController == "login"){
+                nextButton.enabled = true
+            }
         } else {
             nextButton.enabled = false
         }
@@ -52,10 +55,8 @@ class chooseUniversityController: UIViewController, UIPickerViewDataSource, UIPi
     }
     
     override func viewDidAppear(animated: Bool) {
-        if !(appDelegate.first_run) {
-            nextButton.tintColor = UIColor.clearColor()
-            nextButton.enabled = false
-        }
+        print("parent view controller")
+        print(self.prevController)
     }
 
     override func didReceiveMemoryWarning() {

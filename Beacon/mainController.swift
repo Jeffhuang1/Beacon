@@ -7,26 +7,23 @@
 //
 
 import UIKit
-
+import FBSDKLoginKit
 class MainController: UIViewController {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         print(appDelegate.data)
-        appDelegate.connectSocketIO()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "onConnectHandler", name: onConnectNotificationKey, object: nil)
-        // Do any additional setup after loading the view, typically from a nib.
-        appDelegate.first_run = false
     }
     override func viewDidAppear(animated: Bool) {
+        print("view did appear")
         self.tabBarController!.tabBar.hidden = false;
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        if(FBSDKAccessToken.currentAccessToken() == nil){
+            self.navigationController!.popToRootViewControllerAnimated(true)
+        }
     }
     
     func onConnectHandler(){
         print("connect Handler in Main Controller")
     }
+    
 }
