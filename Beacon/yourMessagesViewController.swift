@@ -9,10 +9,13 @@
 import UIKit
 import FBSDKLoginKit
 class YourMessagesViewController: UIViewController {
+    
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
     override func viewDidAppear(animated: Bool) {
     }
 }

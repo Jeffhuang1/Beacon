@@ -65,21 +65,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         request.addValue(FBSDKAccessToken.currentAccessToken().tokenString, forHTTPHeaderField: "Authorization")
         
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            let json = try? NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
-            
-            // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
-                // The JSONObjectWithData constructor didn't return an error. But, we should still
-                // check and make sure that json has a value using optional binding.
-            if (json != nil) {
+            if (data != nil){
+                let json = try? NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+                if (json != nil) {
                     // Okay, the parsedJSON is here, let's get the value for 'success' out of it
-                postCompleted(succeeded: true, data: json)
-            }
-            else {
+                    postCompleted(succeeded: true, data: json)
+                }
+                else {
                     // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
-                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                print("Error could not parse JSON: \(jsonStr)")
-                postCompleted(succeeded: false, data: nil)
+                    let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("Error could not parse JSON: \(jsonStr)")
+                    postCompleted(succeeded: true, data: nil)
+                }
             }
+            
+            postCompleted(succeeded: false, data: nil)
         })
         
         task.resume()
@@ -92,21 +92,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         request.addValue(FBSDKAccessToken.currentAccessToken().tokenString, forHTTPHeaderField: "Authorization")
         
         let task = session.dataTaskWithRequest(request, completionHandler: {data, response, error -> Void in
-            let json = try? NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+            if (data != nil){
+                let json = try? NSJSONSerialization.JSONObjectWithData(data!, options: .MutableLeaves) as? NSDictionary
+                if (json != nil) {
+                    // Okay, the parsedJSON is here, let's get the value for 'success' out of it
+                    getCompleted(succeeded: true, data: json)
+                }
+                else {
+                    // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
+                    let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
+                    print("Error could not parse JSON: \(jsonStr)")
+                    getCompleted(succeeded: false, data: nil)
+                }
+            }
             
-            // Did the JSONObjectWithData constructor return an error? If so, log the error to the console
-            // The JSONObjectWithData constructor didn't return an error. But, we should still
-            // check and make sure that json has a value using optional binding.
-            if (json != nil) {
-                // Okay, the parsedJSON is here, let's get the value for 'success' out of it
-                getCompleted(succeeded: true, data: json)
-            }
-            else {
-                // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
-                let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                print("Error could not parse JSON: \(jsonStr)")
-                getCompleted(succeeded: false, data: nil)
-            }
+            getCompleted(succeeded: false, data: nil)
         })
         
         task.resume()
@@ -120,10 +120,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.fbId = String(result["id"])
                     self.fbName = String(result["name"])
                     self.httpGet("user/?id=1018229131578227", getCompleted: { (succeeded, data) -> Void in
-                        print("http get request result", data)
+                        print("http get request result", data, succeeded)
                     })
                     self.httpPost(["username":"jameson", "password":"password"], url: "send", postCompleted: { (succeeded, data) -> Void in
-                        print("http post request result", data)
+                        print("http post request result", data, succeeded)
                     })
                 }
             })
