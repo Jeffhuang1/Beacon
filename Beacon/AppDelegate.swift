@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var data = "This is test data"
     var userMessages: [UserMessages] = []
-    var courses: [String] = []
+    var selectedCourses: [String] = ["ECE200A", "ECE240", "Add Courses"]
+    var courses: [String] = ["ECE200A", "ECE240", "Add Courses"]
+    var currentUniversity = "University of Waterloo"
     var current_course: String = ""
     var current_course_description: String = ""
     var fbId: String?
@@ -26,15 +28,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var first_run = true
     
     
-    
     let socket = SocketIOClient(socketURL: "https://ece106.com", options: ["cookies": ["foo","jar"]])
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        GMSServices.provideAPIKey("AIzaSyAEhvJGGBYD8AA4JtAoZI6fHvMCxI7opwk")
+        GMSServices.provideAPIKey("AIzaSyByiYZKWwl3XbFfUR-eaiC2CC65gWbyWOk")
         print("api key provided")
         
+        if #available(iOS 8.0, *) {
+            print("registering ios 8")
+            let settings = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: nil)
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+            UIApplication.sharedApplication().registerForRemoteNotifications()
+        } else {
+            print("registering ios 7 ")
+            UIApplication.sharedApplication().registerForRemoteNotificationTypes([.Alert, .Sound, .Badge])
+        }
+        
         return FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+    }
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        print(String("deviceToken", deviceToken))
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        NSLog("Failed to get Token: Error = ", error)
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
+        // display the userInfo
+        if let notification = userInfo["aps"] as? NSDictionary,
+            let alert = notification["alert"] as? String {
+                print("notification", notification)
+                print("alert", alert)
+        }
+        completionHandler(UIBackgroundFetchResult.NewData)
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
@@ -63,6 +92,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func getMajorSystemVersion() -> String {
+        return UIDevice.currentDevice().systemVersion
+    }
+    
     func httpPost(params : Dictionary<String, String>, url : String, postCompleted : (succeeded: Bool, data: NSDictionary??) -> ()){
         let request = NSMutableURLRequest(URL: NSURL(string: "https://ece106.com/api/" + url)!)
         let session = NSURLSession.sharedSession()
@@ -84,9 +117,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("Error could not parse JSON: \(jsonStr)")
                     postCompleted(succeeded: true, data: nil)
                 }
+            } else {
+                postCompleted(succeeded: false, data: nil)
             }
-            
-            postCompleted(succeeded: false, data: nil)
         })
         
         task.resume()
@@ -111,16 +144,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("Error could not parse JSON: \(jsonStr)")
                     getCompleted(succeeded: false, data: nil)
                 }
+            } else {
+                getCompleted(succeeded: false, data: nil)
             }
-            
-            getCompleted(succeeded: false, data: nil)
         })
         
         task.resume()
     }
     func loadServerData(){
+        print("load server data called")
         if(FBSDKAccessToken.currentAccessToken() != nil){
-            _ = FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"id,name"]).startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
+            FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"id,name"]).startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
                 if(error != nil){
                     print("error", error)
                 }else{
@@ -128,6 +162,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     self.fbName = String(result["name"])
                 }
             })
+            self.getMessages()
         }
         
     }
@@ -155,6 +190,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSNotificationCenter.defaultCenter().postNotificationName(onConnectNotificationKey, object: self)
             return
         }*/
+    }
+    
+    func getMessages() {
+        print("called get messagse")
+        self.httpGet("mymessages", getCompleted: {
+            (succeeded, data) -> Void in
+            //print("data: ", data)
+            print("got server response")
+            if(data != nil){
+                let messages = data!!["messages"]
+                for(var i = 0; i < messages!.count; ++i){
+                    let messageHistory = messages![i]["message"]
+                    self.userMessages.append(UserMessages(user: String(messageHistory!![0]["senderName"])))
+                    for(var j = 0; j < messageHistory!!.count; j++){
+                        let senderId = String(messageHistory!![i]["sender"])
+                        let sender = String(messageHistory!![i]["senderName"])
+                        let messageContent = String(messageHistory!![i]["message"])
+                        self.userMessages[i].messages.append(JSQMessage(senderId: senderId, displayName: sender, text: messageContent))
+                }
+            }
+            }
+        })
+
     }
 }
 

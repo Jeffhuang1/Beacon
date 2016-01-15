@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		001F43BE1C42974C0068B12C /* yourMessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F43BD1C42974C0068B12C /* yourMessagesViewController.swift */; };
 		001F43C01C4298370068B12C /* messagesClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 001F43BF1C4298370068B12C /* messagesClass.swift */; };
+		002A31581C46013500DD1B97 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 002A31531C46013500DD1B97 /* Info.plist */; };
+		002A31591C46013500DD1B97 /* MGSwipeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 002A31551C46013500DD1B97 /* MGSwipeButton.m */; };
+		002A315A1C46013500DD1B97 /* MGSwipeTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 002A31571C46013500DD1B97 /* MGSwipeTableCell.m */; };
 		0059CBA51C420AFC00CA2047 /* SocketAckEmitter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059CB911C420AFC00CA2047 /* SocketAckEmitter.swift */; };
 		0059CBA61C420AFC00CA2047 /* SocketAckManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059CB921C420AFC00CA2047 /* SocketAckManager.swift */; };
 		0059CBA71C420AFC00CA2047 /* SocketAnyEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059CB931C420AFC00CA2047 /* SocketAnyEvent.swift */; };
@@ -89,8 +92,9 @@
 		00EFE0DA1C33482800DDAD80 /* addCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0D91C33482800DDAD80 /* addCourseController.swift */; };
 		00F2BFFC1C42BB5A008B117C /* messagingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 00F2BFFB1C42BB5A008B117C /* messagingCell.xib */; };
 		00F2BFFE1C42BEA3008B117C /* messagingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00F2BFFD1C42BEA2008B117C /* messagingCell.swift */; };
-		9A27482E1C42DC50008D5392 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A27482C1C42DC50008D5392 /* FBSDKCoreKit.framework */; };
-		9A27482F1C42DC50008D5392 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A27482D1C42DC50008D5392 /* FBSDKLoginKit.framework */; };
+		00F2C0001C434E9A008B117C /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F2BFFF1C434E9A008B117C /* GoogleMaps.framework */; };
+		00F2C0031C434EA8008B117C /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F2C0011C434EA8008B117C /* FBSDKCoreKit.framework */; };
+		00F2C0041C434EA8008B117C /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00F2C0021C434EA8008B117C /* FBSDKLoginKit.framework */; };
 		9A2748331C42E3D3008D5392 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748321C42E3D3008D5392 /* AVFoundation.framework */; };
 		9A2748351C42E3DD008D5392 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748341C42E3DD008D5392 /* CoreData.framework */; };
 		9A2748371C42E3E8008D5392 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A2748361C42E3E8008D5392 /* CoreLocation.framework */; };
@@ -123,6 +127,11 @@
 /* Begin PBXFileReference section */
 		001F43BD1C42974C0068B12C /* yourMessagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = yourMessagesViewController.swift; sourceTree = "<group>"; };
 		001F43BF1C4298370068B12C /* messagesClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = messagesClass.swift; sourceTree = "<group>"; };
+		002A31531C46013500DD1B97 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		002A31541C46013500DD1B97 /* MGSwipeButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeButton.h; sourceTree = "<group>"; };
+		002A31551C46013500DD1B97 /* MGSwipeButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeButton.m; sourceTree = "<group>"; };
+		002A31561C46013500DD1B97 /* MGSwipeTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MGSwipeTableCell.h; sourceTree = "<group>"; };
+		002A31571C46013500DD1B97 /* MGSwipeTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MGSwipeTableCell.m; sourceTree = "<group>"; };
 		0059CB911C420AFC00CA2047 /* SocketAckEmitter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckEmitter.swift; sourceTree = "<group>"; };
 		0059CB921C420AFC00CA2047 /* SocketAckManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAckManager.swift; sourceTree = "<group>"; };
 		0059CB931C420AFC00CA2047 /* SocketAnyEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketAnyEvent.swift; sourceTree = "<group>"; };
@@ -252,8 +261,9 @@
 		00EFE0D91C33482800DDAD80 /* addCourseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = addCourseController.swift; sourceTree = "<group>"; };
 		00F2BFFB1C42BB5A008B117C /* messagingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = messagingCell.xib; sourceTree = "<group>"; };
 		00F2BFFD1C42BEA2008B117C /* messagingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = messagingCell.swift; sourceTree = "<group>"; };
-		9A27482C1C42DC50008D5392 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		9A27482D1C42DC50008D5392 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		00F2BFFF1C434E9A008B117C /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
+		00F2C0011C434EA8008B117C /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = ../../Documents/FacebookSDK/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		00F2C0021C434EA8008B117C /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = ../../Documents/FacebookSDK/FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		9A2748321C42E3D3008D5392 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		9A2748341C42E3DD008D5392 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9A2748361C42E3E8008D5392 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -278,15 +288,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00F2C0001C434E9A008B117C /* GoogleMaps.framework in Frameworks */,
 				9A2748511C42EA9C008D5392 /* Accelerate.framework in Frameworks */,
 				9A27484F1C42EA91008D5392 /* CoreBluetooth.framework in Frameworks */,
 				9A2748491C42E473008D5392 /* SystemConfiguration.framework in Frameworks */,
 				9A2748471C42E467008D5392 /* QuartzCore.framework in Frameworks */,
+				00F2C0031C434EA8008B117C /* FBSDKCoreKit.framework in Frameworks */,
 				9A2748451C42E45C008D5392 /* OpenGLES.framework in Frameworks */,
 				9A2748431C42E43D008D5392 /* libz.tbd in Frameworks */,
 				9A2748541C42F429008D5392 /* GoogleMaps.framework in Frameworks */,
 				9A2748411C42E433008D5392 /* libicucore.tbd in Frameworks */,
 				9A27483F1C42E425008D5392 /* libc++.tbd in Frameworks */,
+				00F2C0041C434EA8008B117C /* FBSDKLoginKit.framework in Frameworks */,
 				9A27483D1C42E40A008D5392 /* ImageIO.framework in Frameworks */,
 				9A27483B1C42E400008D5392 /* GLKit.framework in Frameworks */,
 				9A2748391C42E3F5008D5392 /* CoreText.framework in Frameworks */,
@@ -294,8 +307,6 @@
 				9A2748351C42E3DD008D5392 /* CoreData.framework in Frameworks */,
 				9A2748331C42E3D3008D5392 /* AVFoundation.framework in Frameworks */,
 				0059CBBC1C420D5400CA2047 /* AudioToolbox.framework in Frameworks */,
-				9A27482E1C42DC50008D5392 /* FBSDKCoreKit.framework in Frameworks */,
-				9A27482F1C42DC50008D5392 /* FBSDKLoginKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +320,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		002A31521C46013500DD1B97 /* MGSwipeTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				002A31531C46013500DD1B97 /* Info.plist */,
+				002A31541C46013500DD1B97 /* MGSwipeButton.h */,
+				002A31551C46013500DD1B97 /* MGSwipeButton.m */,
+				002A31561C46013500DD1B97 /* MGSwipeTableCell.h */,
+				002A31571C46013500DD1B97 /* MGSwipeTableCell.m */,
+			);
+			name = MGSwipeTableCell;
+			path = Beacon/MGSwipeTableCell;
+			sourceTree = SOURCE_ROOT;
+		};
 		0059CB901C420AFC00CA2047 /* SocketIO */ = {
 			isa = PBXGroup;
 			children = (
@@ -511,6 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				0059CBEC1C420E1A00CA2047 /* JSQMessagesViewController */,
+				002A31521C46013500DD1B97 /* MGSwipeTableCell */,
 				0059CB901C420AFC00CA2047 /* SocketIO */,
 				00EFE0B31C3235DF00DDAD80 /* AppDelegate.swift */,
 				00A376CF1C4175A00050FEDA /* myBeaconController.swift */,
@@ -548,6 +573,7 @@
 			isa = PBXGroup;
 			children = (
 				9A2748551C42F452008D5392 /* GoogleMaps.bundle */,
+				00F2BFFF1C434E9A008B117C /* GoogleMaps.framework */,
 				9A2748531C42F429008D5392 /* GoogleMaps.framework */,
 				9A2748501C42EA9C008D5392 /* Accelerate.framework */,
 				9A27484E1C42EA91008D5392 /* CoreBluetooth.framework */,
@@ -564,8 +590,8 @@
 				9A2748341C42E3DD008D5392 /* CoreData.framework */,
 				9A2748321C42E3D3008D5392 /* AVFoundation.framework */,
 				0059CBBB1C420D5400CA2047 /* AudioToolbox.framework */,
-				9A27482C1C42DC50008D5392 /* FBSDKCoreKit.framework */,
-				9A27482D1C42DC50008D5392 /* FBSDKLoginKit.framework */,
+				00F2C0011C434EA8008B117C /* FBSDKCoreKit.framework */,
+				00F2C0021C434EA8008B117C /* FBSDKLoginKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -621,6 +647,14 @@
 					00EFE0AF1C3235DF00DDAD80 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = HG5F32QAQ4;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					00EFE0C31C3235DF00DDAD80 = {
 						CreatedOnToolsVersion = 7.2;
@@ -664,6 +698,7 @@
 				0059CC571C420E1A00CA2047 /* JSQMessagesViewController.xib in Resources */,
 				0059CC731C420E1A00CA2047 /* JSQMessagesLoadEarlierHeaderView.xib in Resources */,
 				00F2BFFC1C42BB5A008B117C /* messagingCell.xib in Resources */,
+				002A31581C46013500DD1B97 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,6 +741,7 @@
 				00EFE0DA1C33482800DDAD80 /* addCourseController.swift in Sources */,
 				0059CBAE1C420AFC00CA2047 /* SocketFixUTF8.swift in Sources */,
 				0059CBB71C420AFC00CA2047 /* SwiftRegex.swift in Sources */,
+				002A315A1C46013500DD1B97 /* MGSwipeTableCell.m in Sources */,
 				0059CBA61C420AFC00CA2047 /* SocketAckManager.swift in Sources */,
 				0059CBB81C420AFC00CA2047 /* WebSocket.swift in Sources */,
 				00EFE0D81C333FF700DDAD80 /* yourCoursesController.swift in Sources */,
@@ -716,6 +752,7 @@
 				0059CC541C420E1A00CA2047 /* UIView+JSQMessages.m in Sources */,
 				0059CC741C420E1A00CA2047 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				0059CC621C420E1A00CA2047 /* JSQMediaItem.m in Sources */,
+				002A31591C46013500DD1B97 /* MGSwipeButton.m in Sources */,
 				0059CBAC1C420AFC00CA2047 /* SocketEngineSpec.swift in Sources */,
 				0059CBB31C420AFC00CA2047 /* SocketPacket.swift in Sources */,
 				9A27484D1C42E808008D5392 /* beaconSearchController.swift in Sources */,
@@ -828,7 +865,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -867,7 +904,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -879,21 +916,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jeffrey Huang (9FXV64965A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jeffrey Huang (9FXV64965A)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/emilysemple/Documents/FacebookSDK,
 					/Users/emilysemple/Desktop/wrench_porn/googlemaps,
 					/Users/emilysemple/Desktop/wrench_porn/googlemaps/Frameworks,
+					/Users/Jeffrey/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = Beacon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.jeffrey.Beacon;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.jeffrey.PeerConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2a1739de-c377-4765-9c16-45b798abbecd";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/emilysemple/Desktop/wrench_porn/beacon/Beacon-Bridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Beacon-Bridge.h";
 			};
 			name = Debug;
 		};
@@ -901,21 +941,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jeffrey Huang (9FXV64965A)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jeffrey Huang (9FXV64965A)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					/Users/emilysemple/Documents/FacebookSDK,
 					/Users/emilysemple/Desktop/wrench_porn/googlemaps,
 					/Users/emilysemple/Desktop/wrench_porn/googlemaps/Frameworks,
+					/Users/Jeffrey/Documents/FacebookSDK,
 				);
 				INFOPLIST_FILE = Beacon/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.jeffrey.Beacon;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.jeffrey.PeerConnect;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "2a1739de-c377-4765-9c16-45b798abbecd";
 				SWIFT_INSTALL_OBJC_HEADER = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "/Users/emilysemple/Desktop/wrench_porn/beacon/Beacon-Bridge.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Beacon-Bridge.h";
 			};
 			name = Release;
 		};

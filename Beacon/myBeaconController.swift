@@ -25,8 +25,7 @@ class myBeaconController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        appDelegate.sendMessage("test message", id: "10201322812348850")
-        appDelegate.connectSocketIO()
+        //appDelegate.connectSocketIO()
         appDelegate.loadServerData()
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onConnectHandler", name: onConnectNotificationKey, object: nil)
         // Do any additional setup after loading the view, typically from a nib.

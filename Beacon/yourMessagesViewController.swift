@@ -17,7 +17,6 @@ class YourMessagesViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.messageTable.registerClass(messagingCell.self, forCellReuseIdentifier: "cell")
         self.messageTable.dataSource = self
     }
@@ -30,8 +29,8 @@ class YourMessagesViewController: UIViewController, UITableViewDelegate, UITable
         let cell:messagingCell = self.messageTable
             .dequeueReusableCellWithIdentifier("cell") as! messagingCell!
         if appDelegate.userMessages.count > 0 {
-            
-            cell.textLabel!.text = appDelegate.courses[indexPath.row]
+            let stringA = appDelegate.userMessages[indexPath.row].user
+            cell.textLabel!.text = stringA
         }
         else {
             cell.textLabel!.text = "No messages!?!"
@@ -41,5 +40,6 @@ class YourMessagesViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     override func viewDidAppear(animated: Bool) {
+        self.messageTable.reloadData()
     }
 }
