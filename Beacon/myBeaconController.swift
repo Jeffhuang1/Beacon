@@ -13,7 +13,6 @@ class myBeaconController: UIViewController, UITextViewDelegate {
     
     
     @IBOutlet weak var scrolling: UIScrollView!
-    @IBOutlet weak var courseField: UITextField!
     @IBOutlet weak var beaconButton: UIImageView!
     @IBOutlet weak var courseDescription: UITextView!
     @IBOutlet weak var doneButton: UIBarButtonItem!
@@ -36,7 +35,6 @@ class myBeaconController: UIViewController, UITextViewDelegate {
         if (appDelegate.current_course_description != "") {
             courseDescription.text = appDelegate.current_course_description
         } else {
-            print("empty course description", descriptionPlaceHolder)
             self.courseDescription.text = descriptionPlaceHolder
         }
         
@@ -47,7 +45,6 @@ class myBeaconController: UIViewController, UITextViewDelegate {
         courseDescription.delegate = self
         doneButton.tintColor = UIColor.clearColor()
         doneButton.enabled = false
-        print("showing navbar")
         self.tabBarController!.tabBar.hidden = false;
         self.courseDescription.textContainer.lineFragmentPadding = 0;
         self.courseDescription.textContainerInset = UIEdgeInsetsMake(2,0,0,0);
@@ -64,7 +61,6 @@ class myBeaconController: UIViewController, UITextViewDelegate {
         self.keyboardHeight = keyboardRectangle.height / 2
         
         scrolling.contentSize.height += self.keyboardHeight
-        print(self.keyboardHeight)
         scrolling.setContentOffset(CGPointMake(0, self.keyboardHeight), animated: true)
         doneButton.tintColor = nil
         doneButton.enabled = true
@@ -72,11 +68,9 @@ class myBeaconController: UIViewController, UITextViewDelegate {
     }
     
     @IBAction func selectCourses(sender: AnyObject) {
-        print("clicked courses")
         performSegueWithIdentifier("gotoCoursePicker", sender: self)
     }
     @IBAction func hideKeyboard(sender: AnyObject) {
-        print("hiding keyboard")
         courseDescription.resignFirstResponder()
     }
     func keyboardWillHide() {
@@ -87,18 +81,27 @@ class myBeaconController: UIViewController, UITextViewDelegate {
 
     
     override func viewWillAppear(animated: Bool) {
-        print("view will appear in beacon controller", appDelegate.current_course_description)
+
         courseDescription.text = appDelegate.current_course_description
+        
+        if (appDelegate.current_course != "") {
+            selectCourseButton.setTitle(appDelegate.current_course, forState: UIControlState.Normal)
+        }
+        
         self.tabBarController!.tabBar.hidden = false
     }
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
+        // Stop display of text with back button on destination view controller
+        let no_text_button = UIBarButtonItem()
+        no_text_button.title = ""
+        navigationItem.backBarButtonItem = no_text_button
+        
     }
     
     func textViewShouldEndEditing(textView: UITextView) -> Bool {
-        print("test")
         return true
     }
     func textViewDidBeginEditing(textView: UITextView) {
@@ -121,7 +124,6 @@ class myBeaconController: UIViewController, UITextViewDelegate {
     }
     
     func onConnectHandler(){
-        print("connect Handler in MyBeacon Controller")
     }
     
 }

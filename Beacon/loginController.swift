@@ -22,16 +22,14 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         self.view.addSubview(loginButton)
         // Do any additional setup after loading the view, typically from a nib.
         if(FBSDKAccessToken.currentAccessToken() == nil){
-            print("Not logged In")
         }
         else{
-            print("Logged In")
         }
         self.tabBarController!.tabBar.hidden = true
         self.navigationItem.hidesBackButton = true
+        self.navigationItem.backBarButtonItem?.enabled = false
     }
     override func viewWillAppear(animated: Bool) {
-        print("view will appear")
         self.tabBarController!.tabBar.hidden = true
         self.navigationItem.hidesBackButton = true
     }
@@ -45,29 +43,26 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "login"){
             (segue.destinationViewController as! chooseUniversityController).prevController = self.title!
-            //var state:String
-//            if(mSwitch.on){
-//                state = "ON"
-//            }
-//            else{
-//                state = "OFF"
-//            }
-//            (segue.destinationViewController as! chooseUniversityController).data = state
+            
         }
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         if(error == nil && FBSDKAccessToken.currentAccessToken() != nil){
-            print("login complete")
-            self.performSegueWithIdentifier("login", sender: self)
-        } else if (error == nil){
-            print("user pressed cancel")
-        } else {
-            print(error)
+            
+            // Load user data from server
+            appDelegate.loadServerData()
+            
+            // If user has data on server, i.e. has used app before, skip setup views and segue to My Beacon
+            // Else segue to Choose University view to begin setup process
+            if (appDelegate.selectedCourses != []) {
+                self.performSegueWithIdentifier("existinguser", sender: self)
+            } else {
+                self.performSegueWithIdentifier("login", sender: self)
+            }
         }
     }
     
     func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
-        print("User logged out")
     }
 }

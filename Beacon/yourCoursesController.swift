@@ -53,14 +53,21 @@ class YourCoursesController: UIViewController, UITableViewDelegate, UITableViewD
         return cell
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewWillAppear(animated: Bool) {
+        
+        // Reload course data to include newly selected course
         self.courseTable.reloadData()
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        // Only allow progress to My Beacon page once at least one course has been selected
         if (appDelegate.selectedCourses.count > 0 && doneButton != nil) {
             
             doneButton.enabled = true
-            //self.navigationItem.hidesBackButton = true
         }
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

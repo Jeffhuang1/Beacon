@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="maV-c3-xKo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="maV-c3-xKo">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -18,49 +18,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xMa-Mw-Azn">
-                                <rect key="frame" x="136" y="217" width="51" height="31"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Switch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lle-8m-8iR">
-                                <rect key="frame" x="132" y="157" width="57" height="21"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="watermark_light.png" translatesAutoresizingMaskIntoConstraints="NO" id="LtJ-x3-eqb">
+                                <rect key="frame" x="96" y="72" width="128" height="128"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="By signing in, you agree to the PeerConnect Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7K-Jn-Lrg">
+                                <rect key="frame" x="80" y="235" width="161" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="HJW-SQ-wpq"/>
-                                    <constraint firstAttribute="width" constant="57" id="vHb-7S-gqQ"/>
+                                    <constraint firstAttribute="height" constant="34" id="9fJ-Pi-ULl"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="La1-AD-nhN">
-                                <rect key="frame" x="103" y="310" width="114" height="53"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Login"/>
-                                <connections>
-                                    <action selector="transitionState:" destination="BYZ-38-t0r" eventType="touchUpInside" id="egQ-ab-TVk"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PeerConnect will never post to Facebook on your behalf." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Jd-hq-g2w">
+                                <rect key="frame" x="66" y="288" width="188" height="51"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lle-8m-8iR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="93" id="RYP-ri-caB"/>
-                            <constraint firstItem="xMa-Mw-Azn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="mOj-u1-OjP"/>
-                            <constraint firstItem="xMa-Mw-Azn" firstAttribute="centerX" secondItem="Lle-8m-8iR" secondAttribute="centerX" id="wdS-kr-zIh"/>
-                            <constraint firstItem="xMa-Mw-Azn" firstAttribute="top" secondItem="Lle-8m-8iR" secondAttribute="bottom" constant="39" id="yHt-lG-rgI"/>
+                            <constraint firstItem="0Jd-hq-g2w" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="3Kp-Ps-Pie"/>
+                            <constraint firstItem="0Jd-hq-g2w" firstAttribute="centerX" secondItem="O7K-Jn-Lrg" secondAttribute="centerX" id="BHM-7F-D6E"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0Jd-hq-g2w" secondAttribute="bottom" constant="92" id="JPN-VE-1gc"/>
+                            <constraint firstItem="O7K-Jn-Lrg" firstAttribute="centerX" secondItem="LtJ-x3-eqb" secondAttribute="centerX" id="MOj-l3-jdl"/>
+                            <constraint firstItem="O7K-Jn-Lrg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="64" id="RW4-1g-2mp"/>
+                            <constraint firstItem="0Jd-hq-g2w" firstAttribute="top" secondItem="O7K-Jn-Lrg" secondAttribute="bottom" constant="19" id="UF7-CU-D8o"/>
+                            <constraint firstItem="O7K-Jn-Lrg" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="USc-H0-0cG"/>
+                            <constraint firstItem="O7K-Jn-Lrg" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="235" id="f5q-Xk-Xi0"/>
+                            <constraint firstItem="O7K-Jn-Lrg" firstAttribute="top" secondItem="LtJ-x3-eqb" secondAttribute="bottom" constant="35" id="tn3-mA-1Dt"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="eg2-V2-Z71"/>
-                    <navigationItem key="navigationItem" title="Login" id="tX5-Hg-lc4">
+                    <navigationItem key="navigationItem" title="PeerConnect" id="tX5-Hg-lc4">
                         <barButtonItem key="backBarButtonItem" title=" " id="oN7-Yx-DSo"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
-                        <outlet property="mSwitch" destination="xMa-Mw-Azn" id="pqJ-Om-MSV"/>
                         <segue destination="kuX-KP-VsG" kind="show" identifier="login" id="K4x-oH-rGE"/>
+                        <segue destination="Wh5-Fm-w8k" kind="show" identifier="existinguser" id="VO6-f6-U64"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="958" y="-548"/>
+            <point key="canvasLocation" x="850" y="-590"/>
         </scene>
         <!--Tab Controller-->
         <scene sceneID="2WR-xC-2no">
@@ -216,7 +218,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBf-P9-dIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1042" y="166"/>
+            <point key="canvasLocation" x="1062" y="238"/>
         </scene>
         <!--Pick Beacon Course-->
         <scene sceneID="Iov-kg-xH2">
@@ -600,8 +602,9 @@
     </scenes>
     <resources>
         <image name="plus" width="25" height="25"/>
+        <image name="watermark_light.png" width="56" height="21"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RsU-Uy-EXk"/>
+        <segue reference="VO6-f6-U64"/>
     </inferredMetricsTieBreakers>
 </document>

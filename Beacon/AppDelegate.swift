@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var locationManager: CLLocationManager?
     var data = "This is test data"
     var userMessages: [UserMessages] = []
-    var selectedCourses: [String] = ["ECE200A", "ECE240"]
+    var selectedCourses: [String] = ["Cats 101"]
     var currentUniversity = "University of Waterloo"
     var current_course: String = ""
     var current_course_description: String = ""
@@ -36,12 +36,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         
         GMSServices.provideAPIKey("AIzaSyByiYZKWwl3XbFfUR-eaiC2CC65gWbyWOk")
         if #available(iOS 8.0, *) {
-            print("registering ios 8")
+            
+            // register iOS 8
             let settings = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: nil)
             UIApplication.sharedApplication().registerUserNotificationSettings(settings)
             UIApplication.sharedApplication().registerForRemoteNotifications()
         } else {
-            print("registering ios 7 ")
+            
+            // register iOS 7 and below
             UIApplication.sharedApplication().registerForRemoteNotificationTypes([.Alert, .Sound, .Badge])
         }
         
@@ -49,7 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        print(String("deviceToken", deviceToken))
     }
     
     func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
@@ -60,8 +61,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         // display the userInfo
         if let notification = userInfo["aps"] as? NSDictionary,
             let alert = notification["alert"] as? String {
-                print("notification", notification)
-                print("alert", alert)
         }
         completionHandler(UIBackgroundFetchResult.NewData)
     }
@@ -76,13 +75,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         locationManager!.startUpdatingLocation()
     }
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //print("got location location", locations)
         currentLocation = locations[locations.count - 1]
         self.sendLocation(currentLocation!)
 
     }
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
-        print("failed to get location", error)
     }
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
@@ -132,7 +129,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 else {
                     // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
                     let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                    print("Error could not parse JSON: \(jsonStr)")
                     postCompleted(succeeded: true, data: nil)
                 }
             } else {
@@ -159,7 +155,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                 else {
                     // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
                     let jsonStr = NSString(data: data!, encoding: NSUTF8StringEncoding)
-                    print("Error could not parse JSON: \(jsonStr)")
                     getCompleted(succeeded: false, data: nil)
                 }
             } else {
@@ -170,11 +165,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         task.resume()
     }
     func loadServerData(){
-        print("load server data called")
         if(FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKGraphRequest.init(graphPath: "me", parameters: ["fields":"id,name"]).startWithCompletionHandler({ (connection:FBSDKGraphRequestConnection!, result:AnyObject!, error:NSError!) -> Void in
                 if(error != nil){
-                    print("error", error)
                 }else{
                     self.fbId = String(result["id"])
                     self.fbName = String(result["name"])
@@ -188,18 +181,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     func sendMessage(message: String, id: String) {
         self.httpPost(["message": message, "id": id], url: "send", postCompleted: {
             (succeeded, data) -> Void in
-            print("data: ", data)
         })
     }
     
     func sendLocation(location: CLLocation) {
         let latitude = String(location.coordinate.latitude)
         let longitude = String(location.coordinate.longitude)
-        //print(latitude)
-        //print(longitude)
         self.httpPost([ "latitude": latitude, "longitude": longitude], url: "mylocation", postCompleted: {
             (succeeded, data) -> Void in
-            //print("data: ", data)
         })
     }
     
@@ -222,7 +211,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func getMessages() {
-        print("called get messagse")
         self.httpGet("mymessages", getCompleted: {
             (succeeded, data) -> Void in
             //print("data: ", data)
@@ -234,7 +222,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     self.userMessages.append(UserMessages(user: String(messageHistory!![0]!["senderName"]!!)))
                     for(var j = 0; j < messageHistory!!.count; j++){
                         //let senderId = String(messageHistory!![i]!["sender"]!!)
-                        print("GOT HERE!")
                         let sender = String(messageHistory!![j]!["senderName"]!!)
                         let messageContent = String(messageHistory!![j]!["message"]!!)
                         let messageTime = String(messageHistory!![j]!["timeStamp"]!!)
