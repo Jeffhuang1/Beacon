@@ -54,9 +54,8 @@ class chooseUniversityController: UIViewController, UIPickerViewDataSource, UIPi
         return data[row];
     }
     
-    override func viewDidAppear(animated: Bool) {
-        print("parent view controller")
-        print(self.prevController)
+    override func viewWillAppear(animated: Bool) {
+        self.navigationItem.hidesBackButton = true
     }
 
     override func didReceiveMemoryWarning() {

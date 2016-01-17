@@ -80,6 +80,8 @@
 		0059CC7A1C420EAD00CA2047 /* messagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0059CC791C420EAD00CA2047 /* messagesViewController.swift */; };
 		00A376D01C4175A00050FEDA /* myBeaconController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A376CF1C4175A00050FEDA /* myBeaconController.swift */; };
 		00A376D31C417EF80050FEDA /* beaconCourseSelectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A376D11C417EF80050FEDA /* beaconCourseSelectionController.swift */; };
+		00C653F21C4AE72B00F0210F /* NavigationBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C653F11C4AE72B00F0210F /* NavigationBarController.swift */; };
+		00C653F41C4AF66500F0210F /* TabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00C653F31C4AF66500F0210F /* TabController.swift */; };
 		00EFE0B41C3235DF00DDAD80 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0B31C3235DF00DDAD80 /* AppDelegate.swift */; };
 		00EFE0B61C3235DF00DDAD80 /* loginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00EFE0B51C3235DF00DDAD80 /* loginController.swift */; };
 		00EFE0B91C3235DF00DDAD80 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00EFE0B71C3235DF00DDAD80 /* Main.storyboard */; };
@@ -245,6 +247,8 @@
 		0059CCB21C42139600CA2047 /* Beacon-Bridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Beacon-Bridge.h"; sourceTree = "<group>"; };
 		00A376CF1C4175A00050FEDA /* myBeaconController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = myBeaconController.swift; sourceTree = "<group>"; };
 		00A376D11C417EF80050FEDA /* beaconCourseSelectionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = beaconCourseSelectionController.swift; sourceTree = "<group>"; };
+		00C653F11C4AE72B00F0210F /* NavigationBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationBarController.swift; sourceTree = "<group>"; };
+		00C653F31C4AF66500F0210F /* TabController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabController.swift; sourceTree = "<group>"; };
 		00EFE0B01C3235DF00DDAD80 /* Beacon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Beacon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00EFE0B31C3235DF00DDAD80 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00EFE0B51C3235DF00DDAD80 /* loginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginController.swift; sourceTree = "<group>"; };
@@ -542,10 +546,12 @@
 				00A376D11C417EF80050FEDA /* beaconCourseSelectionController.swift */,
 				00EFE0B51C3235DF00DDAD80 /* loginController.swift */,
 				00EFE0B71C3235DF00DDAD80 /* Main.storyboard */,
+				00C653F31C4AF66500F0210F /* TabController.swift */,
 				9A27484C1C42E808008D5392 /* beaconSearchController.swift */,
 				00F2BFFB1C42BB5A008B117C /* messagingCell.xib */,
 				00F2BFFD1C42BEA2008B117C /* messagingCell.swift */,
 				001F43BD1C42974C0068B12C /* yourMessagesViewController.swift */,
+				00C653F11C4AE72B00F0210F /* NavigationBarController.swift */,
 				001F43BF1C4298370068B12C /* messagesClass.swift */,
 				0059CC791C420EAD00CA2047 /* messagesViewController.swift */,
 				0059CBB91C420C2A00CA2047 /* settingsController.swift */,
@@ -753,6 +759,7 @@
 				0059CC741C420E1A00CA2047 /* JSQMessagesMediaPlaceholderView.m in Sources */,
 				0059CC621C420E1A00CA2047 /* JSQMediaItem.m in Sources */,
 				002A31591C46013500DD1B97 /* MGSwipeButton.m in Sources */,
+				00C653F41C4AF66500F0210F /* TabController.swift in Sources */,
 				0059CBAC1C420AFC00CA2047 /* SocketEngineSpec.swift in Sources */,
 				0059CBB31C420AFC00CA2047 /* SocketPacket.swift in Sources */,
 				9A27484D1C42E808008D5392 /* beaconSearchController.swift in Sources */,
@@ -774,6 +781,7 @@
 				0059CC561C420E1A00CA2047 /* JSQMessagesViewController.m in Sources */,
 				0059CBB51C420AFC00CA2047 /* SocketStringReader.swift in Sources */,
 				0059CC701C420E1A00CA2047 /* JSQMessagesInputToolbar.m in Sources */,
+				00C653F21C4AE72B00F0210F /* NavigationBarController.swift in Sources */,
 				0059CBB61C420AFC00CA2047 /* SocketTypes.swift in Sources */,
 				0059CC591C420E1A00CA2047 /* JSQMessagesBubbleImageFactory.m in Sources */,
 				0059CBAB1C420AFC00CA2047 /* SocketEnginePacketType.swift in Sources */,

@@ -58,18 +58,19 @@ class SettingsController: UITableViewController, UIPickerViewDataSource, UIPicke
         // Do nothing
     }
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("index path row", indexPath.row)
-        print("number of rows in section", self.settingsTable.numberOfRowsInSection(2))
+        //print("index path row", indexPath.row)
+        //print("number of rows in section", self.settingsTable.numberOfRowsInSection(2))
         if (indexPath.section == 1 && indexPath.row == 0){
             print("selected change University")
             doneButton.enabled = false
             self.currentPicker = 0
             universityTextField.becomeFirstResponder()
         }
-        else if (indexPath.section == 3 && indexPath.row == 0) {
+        else if (indexPath.section == 4 && indexPath.row == 0) {
             FBSDKAccessToken.setCurrentAccessToken(nil)
             self.tabBarController!.selectedIndex = 0
-        } else if(indexPath.section == 2 && indexPath.row == self.settingsTable.numberOfRowsInSection(2) - 1){
+            self.appDelegate.myBeaconRef?.performSegueWithIdentifier("logout",  sender: self.appDelegate.myBeaconRef)
+        } else if(indexPath.section == 3){
             print("clicked add courses cell")
             doneButton.enabled = false
             self.currentPicker = 1
@@ -87,10 +88,10 @@ class SettingsController: UITableViewController, UIPickerViewDataSource, UIPicke
         // Dispose of any resources that can be recreated.
     }
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 4
+        return 5
     }
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("section", section)
+        //print("section", section)
         if(section == 2){
             return appDelegate.selectedCourses.count
         } else{
@@ -104,8 +105,10 @@ class SettingsController: UITableViewController, UIPickerViewDataSource, UIPicke
             return "Change University"
         } else if(section == 2){
             return "Your Courses"
-        } else {
+        } else if(section == 4){
             return "Facebook"
+        } else{
+            return super.tableView(tableView, titleForHeaderInSection: section)
         }
     }
     override func tableView(tableView: UITableView, titleForFooterInSection section: Int) -> String? {
@@ -120,18 +123,19 @@ class SettingsController: UITableViewController, UIPickerViewDataSource, UIPicke
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.settingsTable.dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
         if (indexPath.section == 2){
-            print("indexpath row", indexPath.row)
-            if(appDelegate.selectedCourses[indexPath.row] == "Add Courses"){
-                cell.accessoryView = addCoursesTextField
-            }
+            //print("indexpath row", indexPath.row)
             cell.textLabel!.text = appDelegate.selectedCourses[indexPath.row]
         } else if(indexPath.section == 1){
-            cell.accessoryView = universityTextField
-            print("appDelegateCurrentUniversity", appDelegate.currentUniversity)
+            cell.addSubview(universityTextField)
+            //print("appDelegateCurrentUniversity", appDelegate.currentUniversity)
             cell.textLabel!.text = appDelegate.currentUniversity
         } else if(indexPath.section == 0){
             cell.textLabel!.text = "Location Auto-Disable"
             //cell.accessoryView = locationSwitch
+        } else if(indexPath.section == 3){
+            cell.addSubview(addCoursesTextField)
+            //cell.accessoryView = addCoursesTextField
+            cell.textLabel!.text = "Add Courses"
         } else {
             cell.textLabel!.text = "Log out of Facebook"
         }
@@ -163,15 +167,12 @@ class SettingsController: UITableViewController, UIPickerViewDataSource, UIPicke
         print("called")
         if(currentPicker == 0){
             universityTextField.resignFirstResponder()
+            self.tableView.reloadData()
         } else {
             addCoursesTextField.resignFirstResponder()
-            if(appDelegate.selectedCourses.count > 1){
-                appDelegate.selectedCourses.popLast()
-            }
             appDelegate.selectedCourses.append(currentCourseValue)
-            appDelegate.selectedCourses.append("Add Course")
+            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forRow: appDelegate.selectedCourses.count - 1, inSection: 2)], withRowAnimation: .Automatic)
         }
-        self.tableView.reloadData()
     }
     
     func toggledSwitch(){

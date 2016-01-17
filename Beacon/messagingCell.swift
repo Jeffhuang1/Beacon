@@ -8,16 +8,17 @@
 
 import UIKit
 
-class messagingCell: UITableViewCell {
+class messagingCell: MGSwipeTableCell{
 
-    @IBOutlet weak var senderName: UILabel!
-    @IBOutlet weak var lastMessage: UITextView!
-    @IBOutlet weak var lastTime: UITextView!
+    @IBOutlet var senderName: UILabel!
+    @IBOutlet var lastMessage: UILabel!
+    @IBOutlet var lastTime: UILabel!
+
+
     
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

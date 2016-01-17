@@ -17,23 +17,44 @@ class YourMessagesViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.messageTable.registerClass(messagingCell.self, forCellReuseIdentifier: "cell")
+        
+        
+        let nib = UINib(nibName: "messagingCell", bundle: nil)
+        messageTable.registerNib(nib, forCellReuseIdentifier: "messagingCell")
         self.messageTable.dataSource = self
+        
+        self.messageTable.rowHeight = CGFloat(70)
+        
+        //print(appDelegate.userMessages)
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return max(1, appDelegate.userMessages.count)
+        return max(0, appDelegate.userMessages.count)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:messagingCell = self.messageTable
-            .dequeueReusableCellWithIdentifier("cell") as! messagingCell!
+            .dequeueReusableCellWithIdentifier("messagingCell") as! messagingCell!
+        
         if appDelegate.userMessages.count > 0 {
-            let stringA = appDelegate.userMessages[indexPath.row].user
-            cell.textLabel!.text = stringA
-        }
-        else {
-            cell.textLabel!.text = "No messages!?!"
+            
+            cell.senderName!.text = appDelegate.userMessages[indexPath.row].user
+            cell.lastMessage!.text = appDelegate.userMessages[indexPath.row].messages[0].text
+            let timeStamp = appDelegate.userMessages[indexPath.row].messages[0].senderId
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "dd-MM-yyyy"
+            cell.lastTime!.text = dateFormatter.stringFromDate(NSDate(timeIntervalSince1970: NSTimeInterval(Double(timeStamp)! / 1000)))
+            
+            
+            let deleteButton = MGSwipeButton(title: "Delete", backgroundColor: UIColor.redColor(), callback: {(sender: MGSwipeTableCell!) -> Bool in
+                
+                    self.appDelegate.deleteMessageThread((self.messageTable.indexPathForCell(sender)!).row)
+                self.messageTable.deleteRowsAtIndexPaths([self.messageTable.indexPathForCell(sender)!], withRowAnimation: .Automatic)
+            
+                return true})
+            
+            cell.rightButtons = [deleteButton]
+            
         }
         
         return cell

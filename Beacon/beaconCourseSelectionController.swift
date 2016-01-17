@@ -27,20 +27,20 @@ class beaconCourseSelectionController: UIViewController, UITableViewDelegate, UI
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if appDelegate.courses.count == 0 {
+        if appDelegate.selectedCourses.count == 0 {
             return 1
         }
         else {
-            return appDelegate.courses.count
+            return appDelegate.selectedCourses.count
         }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.courseTable
             .dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
-        if appDelegate.courses.count > 0 {
+        if appDelegate.selectedCourses.count > 0 {
             
-            cell.textLabel!.text = appDelegate.courses[indexPath.row]
+            cell.textLabel!.text = appDelegate.selectedCourses[indexPath.row]
         }
         else {
             cell.textLabel!.text = "No courses available :("
@@ -50,8 +50,8 @@ class beaconCourseSelectionController: UIViewController, UITableViewDelegate, UI
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if appDelegate.courses.count != 0 && appDelegate.current_course != appDelegate.courses[indexPath.row]{
-            appDelegate.current_course = appDelegate.courses[indexPath.row]
+        if appDelegate.selectedCourses.count != 0 && appDelegate.current_course != appDelegate.selectedCourses[indexPath.row]{
+            appDelegate.current_course = appDelegate.selectedCourses[indexPath.row]
             appDelegate.current_course_description = ""
         }
         self.dismissViewControllerAnimated(true, completion: {})

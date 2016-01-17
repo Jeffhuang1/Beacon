@@ -21,17 +21,19 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
         loginButton.delegate = self
         self.view.addSubview(loginButton)
         // Do any additional setup after loading the view, typically from a nib.
-    }
-    override func viewDidAppear(animated: Bool) {
-        self.tabBarController!.tabBar.hidden = true;
         if(FBSDKAccessToken.currentAccessToken() == nil){
             print("Not logged In")
         }
         else{
             print("Logged In")
-            appDelegate.first_run = false
-            //self.performSegueWithIdentifier("autoLogin", sender: self)
         }
+        self.tabBarController!.tabBar.hidden = true
+        self.navigationItem.hidesBackButton = true
+    }
+    override func viewWillAppear(animated: Bool) {
+        print("view will appear")
+        self.tabBarController!.tabBar.hidden = true
+        self.navigationItem.hidesBackButton = true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -39,12 +41,6 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     }
 
     @IBAction func transitionState(sender: AnyObject) {
-        if(mSwitch.on){
-            performSegueWithIdentifier("autoLogin", sender: self)
-        }
-        else{
-        performSegueWithIdentifier("login", sender: self)
-        }
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "login"){
@@ -61,9 +57,11 @@ class LoginController: UIViewController, FBSDKLoginButtonDelegate {
     }
     
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
-        if(error == nil){
+        if(error == nil && FBSDKAccessToken.currentAccessToken() != nil){
             print("login complete")
             self.performSegueWithIdentifier("login", sender: self)
+        } else if (error == nil){
+            print("user pressed cancel")
         } else {
             print(error)
         }

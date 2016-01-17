@@ -26,11 +26,11 @@ class YourCoursesController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if appDelegate.courses.count == 0 {
+        if appDelegate.selectedCourses.count == 0 {
             return 1
         }
         else {
-            return appDelegate.courses.count
+            return appDelegate.selectedCourses.count
         }
     }
     
@@ -42,9 +42,9 @@ class YourCoursesController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.courseTable
         .dequeueReusableCellWithIdentifier("cell") as UITableViewCell!
-        if appDelegate.courses.count > 0 {
+        if appDelegate.selectedCourses.count > 0 {
         
-            cell.textLabel!.text = appDelegate.courses[indexPath.row]
+            cell.textLabel!.text = appDelegate.selectedCourses[indexPath.row]
         }
         else {
             cell.textLabel!.text = "Add some courses!"
@@ -56,10 +56,16 @@ class YourCoursesController: UIViewController, UITableViewDelegate, UITableViewD
     override func viewDidAppear(animated: Bool) {
         self.courseTable.reloadData()
         
-        if (appDelegate.courses.count > 0 && doneButton != nil) {
+        if (appDelegate.selectedCourses.count > 0 && doneButton != nil) {
             
             doneButton.enabled = true
             //self.navigationItem.hidesBackButton = true
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        self.tabBarController!.tabBar.hidden = false
+        
+        print ("IT ran")
     }
 }

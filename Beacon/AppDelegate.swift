@@ -9,32 +9,32 @@
 import UIKit
 import FBSDKCoreKit
 import GoogleMaps
+import CoreLocation
 
 let onConnectNotificationKey = "onConnect"
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
 
     var window: UIWindow?
+    var locationManager: CLLocationManager?
     var data = "This is test data"
     var userMessages: [UserMessages] = []
-    var selectedCourses: [String] = ["ECE200A", "ECE240", "Add Courses"]
-    var courses: [String] = ["ECE200A", "ECE240", "Add Courses"]
+    var selectedCourses: [String] = ["ECE200A", "ECE240"]
     var currentUniversity = "University of Waterloo"
     var current_course: String = ""
     var current_course_description: String = ""
+    var currentLocation: CLLocation?
     var fbId: String?
     var fbName: String?
-    var first_run = true
     
+    var myBeaconRef: myBeaconController?
     
     let socket = SocketIOClient(socketURL: "https://ece106.com", options: ["cookies": ["foo","jar"]])
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
         GMSServices.provideAPIKey("AIzaSyByiYZKWwl3XbFfUR-eaiC2CC65gWbyWOk")
-        print("api key provided")
-        
         if #available(iOS 8.0, *) {
             print("registering ios 8")
             let settings = UIUserNotificationSettings(forTypes: [.Alert, .Sound, .Badge], categories: nil)
@@ -65,7 +65,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         completionHandler(UIBackgroundFetchResult.NewData)
     }
-    
+    //Mark: LocationManager Delegate
+    func initLocationManager(){
+        locationManager = CLLocationManager()
+        locationManager!.delegate = self
+        locationManager!.desiredAccuracy = kCLLocationAccuracyBest
+        if #available(iOS 8.0, *) {
+            locationManager!.requestAlwaysAuthorization()
+        }
+        locationManager!.startUpdatingLocation()
+    }
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        //print("got location location", locations)
+        currentLocation = locations[locations.count - 1]
+        self.sendLocation(currentLocation!)
+
+    }
+    func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        print("failed to get location", error)
+    }
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
     }
@@ -174,6 +192,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
     }
     
+    func sendLocation(location: CLLocation) {
+        let latitude = String(location.coordinate.latitude)
+        let longitude = String(location.coordinate.longitude)
+        //print(latitude)
+        //print(longitude)
+        self.httpPost([ "latitude": latitude, "longitude": longitude], url: "mylocation", postCompleted: {
+            (succeeded, data) -> Void in
+            //print("data: ", data)
+        })
+    }
+    
     func connectSocketIO(){
         //print("called connectSocketIO facebook Token = ", FBSDKAccessToken.currentAccessToken().tokenString)
         self.socket.connectParams = ["key": "bar"]
@@ -197,22 +226,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.httpGet("mymessages", getCompleted: {
             (succeeded, data) -> Void in
             //print("data: ", data)
-            print("got server response")
+            //print("got server response", data)
             if(data != nil){
                 let messages = data!!["messages"]
                 for(var i = 0; i < messages!.count; ++i){
-                    let messageHistory = messages![i]["message"]
-                    self.userMessages.append(UserMessages(user: String(messageHistory!![0]["senderName"])))
+                    let messageHistory = messages![i]!["message"]
+                    self.userMessages.append(UserMessages(user: String(messageHistory!![0]!["senderName"]!!)))
                     for(var j = 0; j < messageHistory!!.count; j++){
-                        let senderId = String(messageHistory!![i]["sender"])
-                        let sender = String(messageHistory!![i]["senderName"])
-                        let messageContent = String(messageHistory!![i]["message"])
-                        self.userMessages[i].messages.append(JSQMessage(senderId: senderId, displayName: sender, text: messageContent))
+                        //let senderId = String(messageHistory!![i]!["sender"]!!)
+                        let sender = String(messageHistory!![i]!["senderName"]!!)
+                        let messageContent = String(messageHistory!![i]!["message"]!!)
+                        let messageTime = String(messageHistory!![i]!["timeStamp"]!!)
+                        self.userMessages[i].messages.append(JSQMessage(senderId: messageTime, displayName: sender, text: messageContent))
                 }
             }
             }
         })
 
+    }
+    
+    func deleteMessageThread(index: Int) {
+        self.userMessages.removeAtIndex(index)
     }
 }
 

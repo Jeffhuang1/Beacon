@@ -9,7 +9,7 @@
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="login" hidesBottomBarWhenPushed="YES" id="BYZ-38-t0r" userLabel="Login" customClass="LoginController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="login" id="BYZ-38-t0r" userLabel="Login" customClass="LoginController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -56,17 +56,16 @@
                     <connections>
                         <outlet property="mSwitch" destination="xMa-Mw-Azn" id="pqJ-Om-MSV"/>
                         <segue destination="kuX-KP-VsG" kind="show" identifier="login" id="K4x-oH-rGE"/>
-                        <segue destination="Wh5-Fm-w8k" kind="show" identifier="autoLogin" id="dC5-o2-QRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="958" y="-548"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Controller-->
         <scene sceneID="2WR-xC-2no">
             <objects>
-                <tabBarController id="maV-c3-xKo" sceneMemberID="viewController">
+                <tabBarController id="maV-c3-xKo" customClass="TabController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Jmp-Tw-srd"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="5jG-KO-1ii">
@@ -88,7 +87,7 @@
         <!--Settings-->
         <scene sceneID="27B-KX-TAo">
             <objects>
-                <navigationController id="QlB-HG-Duq" sceneMemberID="viewController">
+                <navigationController id="QlB-HG-Duq" customClass="NavigationBarController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" id="4gr-iO-azZ"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="GCs-lw-mhw">
@@ -178,7 +177,7 @@
                                             <action selector="selectCourses:" destination="Wh5-Fm-w8k" eventType="touchUpInside" id="hfo-ak-7uP"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-n4-Z1f">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Descroption" translatesAutoresizingMaskIntoConstraints="NO" id="hCg-n4-Z1f">
                                         <rect key="frame" x="114" y="259" width="198" height="99"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -212,6 +211,7 @@
                         <segue destination="TLv-4b-ZdU" kind="popoverPresentation" identifier="gotoCoursePicker" popoverAnchorView="tvL-ZO-TJ5" id="ea7-HR-n4I">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="logout" id="5DU-MK-pwg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OBf-P9-dIA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -249,7 +249,7 @@
         <!--Messages-->
         <scene sceneID="BsQ-dU-87f">
             <objects>
-                <navigationController id="JQL-Ad-KYh" sceneMemberID="viewController">
+                <navigationController id="JQL-Ad-KYh" customClass="NavigationBarController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Messages" id="0zD-Tm-swu"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QuF-RK-OxI">
@@ -267,7 +267,7 @@
         <!--Search-->
         <scene sceneID="0bG-bG-Uvp">
             <objects>
-                <navigationController id="eJW-L8-Rkf" sceneMemberID="viewController">
+                <navigationController id="eJW-L8-Rkf" customClass="NavigationBarController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Search" id="y1A-TF-WBc"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cij-sd-DHv">
@@ -285,7 +285,7 @@
         <!--Your Messages-->
         <scene sceneID="vEB-hT-hn0">
             <objects>
-                <viewController id="0ml-J1-ev2" customClass="YourMessagesViewController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="0ml-J1-ev2" customClass="YourMessagesViewController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nwe-19-2mD"/>
                         <viewControllerLayoutGuide type="bottom" id="tRi-Nc-h5g"/>
@@ -471,7 +471,7 @@
         <!--Main-->
         <scene sceneID="AYh-id-tmG">
             <objects>
-                <navigationController title="Main" automaticallyAdjustsScrollViewInsets="NO" hidesBottomBarWhenPushed="YES" id="3hJ-8L-tzC" sceneMemberID="viewController">
+                <navigationController title="Main" automaticallyAdjustsScrollViewInsets="NO" id="3hJ-8L-tzC" customClass="NavigationBarController" customModule="Beacon" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="My Beacon" id="g1v-6T-jY1"/>
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
@@ -481,7 +481,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="gH4-st-Dx1"/>
+                        <segue destination="Wh5-Fm-w8k" kind="relationship" relationship="rootViewController" id="RsU-Uy-EXk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SuX-XD-Xwk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -602,6 +602,6 @@
         <image name="plus" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dC5-o2-QRS"/>
+        <segue reference="RsU-Uy-EXk"/>
     </inferredMetricsTieBreakers>
 </document>

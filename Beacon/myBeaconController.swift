@@ -22,17 +22,22 @@ class myBeaconController: UIViewController, UITextViewDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     
     var keyboardHeight = CGFloat(1.0)
-    
+    var descriptionPlaceHolder = "PlaceHolder"
     override func viewDidLoad() {
         super.viewDidLoad()
-        //appDelegate.connectSocketIO()
-        appDelegate.loadServerData()
+        appDelegate.myBeaconRef = self
+        
+        appDelegate.connectSocketIO() // connects to socket io as a fallback for push notifications
+        appDelegate.initLocationManager()
+        appDelegate.loadServerData() // sets the user's name and loads their messages from server
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onConnectHandler", name: onConnectNotificationKey, object: nil)
         // Do any additional setup after loading the view, typically from a nib.
-        appDelegate.first_run = false
         
-        if appDelegate.current_course_description != "" {
+        if (appDelegate.current_course_description != "") {
             courseDescription.text = appDelegate.current_course_description
+        } else {
+            print("empty course description", descriptionPlaceHolder)
+            self.courseDescription.text = descriptionPlaceHolder
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "keyboardWillShow:", name: UIKeyboardWillShowNotification, object: nil)
@@ -42,9 +47,14 @@ class myBeaconController: UIViewController, UITextViewDelegate {
         courseDescription.delegate = self
         doneButton.tintColor = UIColor.clearColor()
         doneButton.enabled = false
+        print("showing navbar")
+        self.tabBarController!.tabBar.hidden = false;
         self.courseDescription.textContainer.lineFragmentPadding = 0;
         self.courseDescription.textContainerInset = UIEdgeInsetsMake(2,0,0,0);
         self.navigationItem.hidesBackButton = true
+        if(FBSDKAccessToken.currentAccessToken() == nil){
+            self.performSegueWithIdentifier("logout", sender: self)
+        }
     }
     
     func keyboardWillShow(notification:NSNotification) {
@@ -74,17 +84,12 @@ class myBeaconController: UIViewController, UITextViewDelegate {
         doneButton.tintColor = UIColor.clearColor()
         doneButton.enabled = false
     }
+
     
-    
-    override func viewDidAppear(animated: Bool) {
-        if appDelegate.current_course != "" {
-            selectCourseButton.setTitle(appDelegate.current_course, forState: .Normal)
-        }
-    
-        self.tabBarController!.tabBar.hidden = false;
-        if(FBSDKAccessToken.currentAccessToken() == nil){
-            self.navigationController!.popToRootViewControllerAnimated(true)
-        }
+    override func viewWillAppear(animated: Bool) {
+        print("view will appear in beacon controller", appDelegate.current_course_description)
+        courseDescription.text = appDelegate.current_course_description
+        self.tabBarController!.tabBar.hidden = false
     }
     
     
@@ -96,9 +101,18 @@ class myBeaconController: UIViewController, UITextViewDelegate {
         print("test")
         return true
     }
-    
-    func textViewDidEndEditing(textView: UITextView) {
+    func textViewDidBeginEditing(textView: UITextView) {
+        textView.text = nil
+    }
+    func textViewDidChange(textView: UITextView) {
         appDelegate.current_course_description = textView.text
+    }
+    func textViewDidEndEditing(textView: UITextView) {
+        if(textView.text != "" && textView.text != descriptionPlaceHolder){
+            appDelegate.current_course_description = textView.text
+        } else {
+            textView.text = descriptionPlaceHolder
+        }
     }
     
     override func didReceiveMemoryWarning() {

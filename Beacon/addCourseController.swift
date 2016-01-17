@@ -56,7 +56,7 @@ class AddCourseController: UIViewController, UIPickerViewDataSource, UIPickerVie
     
     
     @IBAction func addAndExit(sender: AnyObject) {
-        appDelegate.courses.append((courseSelection.text)!)
+        appDelegate.selectedCourses.append((courseSelection.text)!)
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

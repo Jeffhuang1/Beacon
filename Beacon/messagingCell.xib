@@ -7,41 +7,39 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="6gQ-mA-oOI" customClass="messagingCell" customModule="Beacon" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="messagingCell" rowHeight="70" id="6gQ-mA-oOI" customClass="messagingCell" customModule="Beacon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6gQ-mA-oOI" id="8Co-Dg-hsD">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="69.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59D-f0-ijT">
-                        <rect key="frame" x="8" y="0.0" width="189" height="21"/>
+                        <rect key="frame" x="8" y="8" width="189" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Last message that was sent" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QnV-U7-eR4">
-                        <rect key="frame" x="8" y="20" width="204" height="23"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="textColor" red="0.32869764397905754" green="0.32869764397905754" blue="0.32869764397905754" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Time" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="xfB-Ub-WDO">
-                        <rect key="frame" x="197" y="0.0" width="115" height="27"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="textColor" red="0.34319780759162299" green="0.34319780759162299" blue="0.34319780759162299" alpha="1" colorSpace="calibratedRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4o-cd-59h">
+                        <rect key="frame" x="225" y="8" width="87" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.21083524209999999" green="0.21083524209999999" blue="0.21083524209999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Last message that was sent" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="urV-CG-9Za">
+                        <rect key="frame" x="8" y="37" width="304" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" red="0.21083524214659688" green="0.21083524214659688" blue="0.21083524214659688" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </tableViewCellContentView>
             <connections>
-                <outlet property="lastMessage" destination="QnV-U7-eR4" id="gas-kZ-4nF"/>
-                <outlet property="lastTime" destination="xfB-Ub-WDO" id="sbC-0h-vjX"/>
-                <outlet property="senderName" destination="59D-f0-ijT" id="xMq-Hr-St5"/>
+                <outlet property="lastMessage" destination="urV-CG-9Za" id="c5l-JN-hOf"/>
+                <outlet property="lastTime" destination="o4o-cd-59h" id="C1q-09-ce7"/>
+                <outlet property="senderName" destination="59D-f0-ijT" id="EQu-Jy-9Fs"/>
             </connections>
-            <point key="canvasLocation" x="179" y="240"/>
+            <point key="canvasLocation" x="179" y="227"/>
         </tableViewCell>
     </objects>
 </document>
