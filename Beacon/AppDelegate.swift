@@ -234,9 +234,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
                     self.userMessages.append(UserMessages(user: String(messageHistory!![0]!["senderName"]!!)))
                     for(var j = 0; j < messageHistory!!.count; j++){
                         //let senderId = String(messageHistory!![i]!["sender"]!!)
-                        let sender = String(messageHistory!![i]!["senderName"]!!)
-                        let messageContent = String(messageHistory!![i]!["message"]!!)
-                        let messageTime = String(messageHistory!![i]!["timeStamp"]!!)
+                        print("GOT HERE!")
+                        let sender = String(messageHistory!![j]!["senderName"]!!)
+                        let messageContent = String(messageHistory!![j]!["message"]!!)
+                        let messageTime = String(messageHistory!![j]!["timeStamp"]!!)
                         self.userMessages[i].messages.append(JSQMessage(senderId: messageTime, displayName: sender, text: messageContent))
                 }
             }
